@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group 3 MNSS Payroll System", "Group 3 MNSS Payroll System.csproj", "{2D6155EF-DEF8-46A3-B21B-3D8A413C4CC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group 3 MNSS Payroll System", "Group 3 MNSS Payroll System.csproj", "{7C0EF977-0CA4-4EC2-A7A6-637BAED4B2E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2D6155EF-DEF8-46A3-B21B-3D8A413C4CC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D6155EF-DEF8-46A3-B21B-3D8A413C4CC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D6155EF-DEF8-46A3-B21B-3D8A413C4CC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D6155EF-DEF8-46A3-B21B-3D8A413C4CC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C0EF977-0CA4-4EC2-A7A6-637BAED4B2E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C0EF977-0CA4-4EC2-A7A6-637BAED4B2E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C0EF977-0CA4-4EC2-A7A6-637BAED4B2E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C0EF977-0CA4-4EC2-A7A6-637BAED4B2E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0C58A29E-77C1-42B5-837B-AC0A8763B4AE}
+		SolutionGuid = {C70FD0A4-05BA-4F53-9E17-E0FD6A8DDCB9}
 	EndGlobalSection
 EndGlobal
