@@ -75,6 +75,20 @@
                 </div>
             </div>
         </div>
+
+        <section class="hero-image">
+        <div class="himage">
+            <div class="hero-text">
+             <img src ="/Images/hLogo.png" width="800"/>
+                <br />
+            </div>
+
+            <img class="image1" src="/Images/money.jpg" width="1215" height="800">
+        </div>
+    </section>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
