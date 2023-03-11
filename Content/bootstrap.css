@@ -1036,11 +1036,11 @@ html {
 
 /********************editing the features for the body*/
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.42857143;
-  color: #333333;
-  background-color: #fff;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #60A649;
 }
 input,
 button,

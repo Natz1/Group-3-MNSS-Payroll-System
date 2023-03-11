@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Group_3_MNSS_Payroll_System
+namespace Group_3_MNSS_Payroll_System.Employee
 {
 
 
-    public partial class Contact
+    public partial class ClockInOut
     {
     }
 }

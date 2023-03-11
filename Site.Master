@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - MNSS Payroll System</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -50,11 +50,11 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Employee Home</a></li>
-                        <li><a runat="server" href="~/About">View Profile</a></li>
-                        <li><a runat="server" href="~/Contact">View Wage</a></li>
-                        <li><a runat="server" href="~/Contact">View Pay Date</a></li>
-                        <li><a runat="server" href="~/Contact">Request Payment</a></li>
-                        <li><a runat="server" href="~/Contact">Request Leave</a></li>
+                        <li><a runat="server" href="~/Employee/Profile">View Profile</a></li>
+                        <li><a runat="server" href="~/Employee/PayPeriod">View Pay Period</a></li>
+                        <li><a runat="server" href="~/Employee/ClockInOut">Clock In</a></li>
+                        <li><a runat="server" href="~/Employee/PaymentRequest">Request Payment</a></li>
+                        <li><a runat="server" href="~/Employee/LeaveRequest">Request Leave</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -90,8 +90,10 @@
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
         <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
+            <div class="jumbotron">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
             <hr />
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - MNSS Payroll System</p>
