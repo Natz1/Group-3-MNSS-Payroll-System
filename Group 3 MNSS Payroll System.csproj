@@ -151,6 +151,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Roles\Accountant\PaymentRequests.aspx" />
+    <Content Include="Roles\Accountant\Search.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
@@ -171,11 +173,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="Employee\ClockInOut.aspx" />
-    <Content Include="Employee\LeaveRequest.aspx" />
-    <Content Include="Employee\PaymentRequest.aspx" />
-    <Content Include="Employee\PayPeriod.aspx" />
-    <Content Include="Employee\Profile.aspx" />
+    <Content Include="Roles\Employee\ClockInOut.aspx" />
+    <Content Include="Roles\Employee\LeaveRequest.aspx" />
+    <Content Include="Roles\Employee\PaymentRequest.aspx" />
+    <Content Include="Roles\Employee\PayPeriod.aspx" />
+    <Content Include="Roles\Employee\Profile.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -190,6 +192,10 @@
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Images\logo.png" />
+    <Content Include="Roles\Manager\AddEmployee.aspx" />
+    <Content Include="Roles\Manager\ReviewLeave.aspx" />
+    <Content Include="Roles\Manager\ReviewPayroll.aspx" />
+    <Content Include="Roles\Manager\Search.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -225,6 +231,20 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Roles\Accountant\PaymentRequests.aspx.cs">
+      <DependentUpon>PaymentRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\Accountant\PaymentRequests.aspx.designer.cs">
+      <DependentUpon>PaymentRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Roles\Accountant\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\Accountant\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -334,45 +354,73 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\ClockInOut.aspx.cs">
+    <Compile Include="Roles\Employee\ClockInOut.aspx.cs">
       <DependentUpon>ClockInOut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\ClockInOut.aspx.designer.cs">
+    <Compile Include="Roles\Employee\ClockInOut.aspx.designer.cs">
       <DependentUpon>ClockInOut.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\LeaveRequest.aspx.cs">
+    <Compile Include="Roles\Employee\LeaveRequest.aspx.cs">
       <DependentUpon>LeaveRequest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\LeaveRequest.aspx.designer.cs">
+    <Compile Include="Roles\Employee\LeaveRequest.aspx.designer.cs">
       <DependentUpon>LeaveRequest.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\PaymentRequest.aspx.cs">
+    <Compile Include="Roles\Employee\PaymentRequest.aspx.cs">
       <DependentUpon>PaymentRequest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\PaymentRequest.aspx.designer.cs">
+    <Compile Include="Roles\Employee\PaymentRequest.aspx.designer.cs">
       <DependentUpon>PaymentRequest.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\PayPeriod.aspx.cs">
+    <Compile Include="Roles\Employee\PayPeriod.aspx.cs">
       <DependentUpon>PayPeriod.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\PayPeriod.aspx.designer.cs">
+    <Compile Include="Roles\Employee\PayPeriod.aspx.designer.cs">
       <DependentUpon>PayPeriod.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\Profile.aspx.cs">
+    <Compile Include="Roles\Employee\Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\Profile.aspx.designer.cs">
+    <Compile Include="Roles\Employee\Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Roles\Manager\AddEmployee.aspx.cs">
+      <DependentUpon>AddEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\Manager\AddEmployee.aspx.designer.cs">
+      <DependentUpon>AddEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Roles\Manager\ReviewLeave.aspx.cs">
+      <DependentUpon>ReviewLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\Manager\ReviewLeave.aspx.designer.cs">
+      <DependentUpon>ReviewLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Roles\Manager\ReviewPayroll.aspx.cs">
+      <DependentUpon>ReviewPayroll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\Manager\ReviewPayroll.aspx.designer.cs">
+      <DependentUpon>ReviewPayroll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Roles\Manager\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\Manager\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -398,9 +446,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Accountant\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Manager\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
