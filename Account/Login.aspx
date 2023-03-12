@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="Log in" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Group_3_MNSS_Payroll_System.Account.Login" Async="true" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h2><%: Title %>.</h2>
-
     <!--putting login form here-->
     <div class="login-box">
+        <h2><%: Title %>.</h2>
+
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <section id="loginForm">
                     <div class="form-horizontal">
                         <h4>Use a local account to log in.</h4>
@@ -17,7 +17,7 @@
                             </p>
                         </asp:PlaceHolder>
                         <div class="form-group">
-                            <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
+                            <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-1 control-label">Email</asp:Label>
                             <div class="col-md-10">
                                 <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
@@ -40,19 +40,19 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
+                            <div class="col-md-offset-6 col-md-10">
                                 <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn btn-default" />
                             </div>
                         </div>
                     </div>
-                    <p>
+                    <!--<p>
                         <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register as a new user</asp:HyperLink>
                     </p>
                     <p>
                         <%-- Enable this once you have account confirmation enabled for password reset functionality
                         <asp:HyperLink runat="server" ID="ForgotPasswordHyperLink" ViewStateMode="Disabled">Forgot your password?</asp:HyperLink>
                         --%>
-                    </p>
+                    </p>-->
                 </section>
             </div>
         </div>

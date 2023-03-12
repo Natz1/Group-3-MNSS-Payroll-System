@@ -80,19 +80,19 @@
 
                         <!--Manager Permissions-->
                             <!--Adds new employee record to database-->
-                        <li id="manager1" runat="server"><a runat="server" href="~/Roles/Employee/AddEmployee">Add Employee</a></li>
+                        <li id="manager1" runat="server"><a runat="server" href="~/Roles/Manager/AddEmployee">Add Employee</a></li>
                             <!--Locates employees using search bar, 
                                once employee found REDIRECTS to employee information page
                                then provides option to edit information
                                Displays work hours for that specific employee-->
-                        <li id="manager2" runat="server"><a runat="server" href="~/Roles/Employee/Search">Search</a></li>
+                        <li id="manager2" runat="server"><a runat="server" href="~/Roles/Manager/Search">Search</a></li>
                             <!--Allows manager to view transactions performed by accountant in 
                                 report format-->
-                        <li id="manager3" runat="server"><a runat="server" href="~/Roles/Employee/ReviewPayroll">Review Payroll</a></li>
+                        <li id="manager3" runat="server"><a runat="server" href="~/Roles/Manager/ReviewPayroll">Review Payroll</a></li>
                             <!--Allows manager to view employee leave requests
                                 read what they entail
                                 and approve or reject them-->
-                        <li id="manager4" runat="server"><a runat="server" href="~/Roles/Employee/ReviewLeave">Leave Requests</a></li>
+                        <li id="manager4" runat="server"><a runat="server" href="~/Roles/Manager/ReviewLeave">Leave Requests</a></li>
                     </ul>
 
                     <!--Log in-->
@@ -100,7 +100,7 @@
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
+                                <!--<li><a runat="server" href="~/Account/Register">Register</a></li>-->
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>

@@ -1051,12 +1051,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: #42b932; /*Hyperlink color*/
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #23527c;
+  color: #fff;
   text-decoration: underline;
 }
 a:focus {
@@ -2261,7 +2261,6 @@ legend {
   border-bottom: 1px solid #e5e5e5;
 }
 label {
-  display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: 700;
@@ -2373,7 +2372,7 @@ textarea.form-control {
   }
 }
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 .radio,
 .checkbox {
@@ -2388,9 +2387,10 @@ fieldset[disabled] .checkbox label {
 .radio label,
 .checkbox label {
   min-height: 20px;
-  padding-left: 20px;
+  padding-left: 5px;
   margin-bottom: 0;
   font-weight: 400;
+  font-size: medium;
   cursor: pointer;
 }
 .checkbox-inline input[type="checkbox"] {
@@ -2668,7 +2668,7 @@ select[multiple].input-lg {
   min-height: 27px;
 }
 .form-horizontal .form-group {
-  margin-right: -15px;
+  margin-right: -150px;
   margin-left: -15px;
 }
 @media (min-width: 768px) {
@@ -4434,16 +4434,18 @@ a.badge:focus {
 .login-box {
     background-color: #184f07;
     width: 350px;
-    height: 450px;
-    padding: 30px;
-    margin: 20px;
+    height: 550px;
+    padding: 60px;
+    margin-left: 300px;
     color: #fff;
     position: absolute;
-    right: 120px;
+    left: 120px;
     text-align: left;
 }
 .login-box p {
-    color: #2779e7;
+    color: #fff;
+    padding-left: 50px;
+    padding-top: 15px;
 }
 
 /*hero image at top of page*/
@@ -4469,11 +4471,12 @@ a.badge:focus {
 }
 
 .jumbotron {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    height: 120vh;
+    color: inherit;
+    background-color: #fff;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -4481,7 +4484,7 @@ a.badge:focus {
 }
 .jumbotron p {
   margin-bottom: 15px;
-  font-size: 21px;
+  font-size: 15px;
   font-weight: 200;
 }
 .jumbotron > hr {
