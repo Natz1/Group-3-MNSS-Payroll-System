@@ -151,6 +151,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MNSSPayrollDatabase.mdf" />
+    <Content Include="App_Data\MNSSPayrollDatabase_log.ldf">
+      <DependentUpon>MNSSPayrollDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="Roles\Accountant\PaymentRequests.aspx" />
     <Content Include="Roles\Accountant\Search.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
@@ -445,9 +449,7 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />

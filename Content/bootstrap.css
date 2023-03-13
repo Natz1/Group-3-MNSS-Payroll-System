@@ -4429,6 +4429,21 @@ a.badge:focus {
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
+/*formatting grid view*/
+.gridcss {
+}
+
+.header {
+    background-color: #184F07;
+    color: #fff;
+    border: solid 2px black;
+}
+
+.rows {
+    background-color: #60A649;
+    color: #fff;
+    border: solid 2px black;
+}
 
 /*formatting login box*/
 .login-box {
