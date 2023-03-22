@@ -37,6 +37,7 @@
             </Scripts>
         </asp:ScriptManager>
 
+        <!--Navigation Bar-->
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -45,14 +46,56 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <!--Adds logo to navigation bar-->
+                    <a class="navbar-brand navbar-left" runat="server" href="~/"><img src="/Images/logo.png" width="190" height ="50"/></a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <!--Employee Permissions-->
+                            <!--View profile details that manager created and edit some of them-->
+                        <li id="employee1" runat="server"><a runat="server" href="~/Roles/Employee/Profile">View Profile</a></li>
+                            <!--View current wage, pay date, etc entered by accountant-->
+                        <li id="employee2" runat="server"><a runat="server" href="~/Roles/Employee/PayPeriod">View Pay Period</a></li>
+                            <!--Gets the current date and time from the system
+                                Saves the time when employee clocks in/out-->
+                        <li id="employee3" runat="server"><a runat="server" href="~/Roles/Employee/ClockInOut">Clock In/Out</a></li>
+                            <!--Employees can submit requests for payment to the accountant-->
+                        <li id="employee4" runat="server"><a runat="server" href="~/Roles/Employee/PaymentRequest">Request Payment</a></li>
+                            <!--Employees can submit requests for leave to the manager-->
+                        <li id="employee5" runat="server"><a runat="server" href="~/Roles/Employee/LeaveRequest">Request Leave</a></li>
+
+
+                        <!--Accountant Permissions-->
+                            <!--Locates employees using search bar, 
+                               once employee found REDIRECTS to employee information page
+                               then provides option to edit current wage and pay date
+                               Displays work hours for that specific employee-->
+                        <li id="accountant1" runat="server"><a runat="server" href="~/Roles/Accountant/Search">Search</a></li>
+                            <!--Accountant receives request for payment from employee
+                                Enters and calculates salary information
+                                Notifies employee-->
+                        <li id="accountant2" runat="server"><a runat="server" href="~/Roles/Accountant/PaymentRequests">Payment Requests</a></li>
+
+
+                        <!--Manager Permissions-->
+                            <!--Adds new employee record to database-->
+                        <li id="manager1" runat="server"><a runat="server" href="~/Roles/Manager/AddEmployee">Add Employee</a></li>
+                            <!--Locates employees using search bar, 
+                               once employee found REDIRECTS to employee information page
+                               then provides option to edit information
+                               Displays work hours for that specific employee-->
+                        <li id="manager2" runat="server"><a runat="server" href="~/Roles/Manager/Search">Search</a></li>
+                            <!--Allows manager to view transactions performed by accountant in 
+                                report format-->
+                        <li id="manager3" runat="server"><a runat="server" href="~/Roles/Manager/ReviewPayroll">Review Payroll</a></li>
+                            <!--Allows manager to view employee leave requests
+                                read what they entail
+                                and approve or reject them-->
+                        <li id="manager4" runat="server"><a runat="server" href="~/Roles/Manager/ReviewLeave">Leave Requests</a></li>
                     </ul>
+
+
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
@@ -72,12 +115,30 @@
                 </div>
             </div>
         </div>
+
+        <!--Add large image across web pages-->
+        <section class="hero-image">
+        <div class="himage">
+            <div class="hero-text">
+             <img src ="/Images/hLogo.png" width="800"/>
+                <br />
+            </div>
+
+            <img class="image1" src="/Images/money.jpg" width="1215" height="800">
+        </div>
+    </section>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+        <!--Encases body in jumbotron-->
         <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
+            <div class="jumbotron">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - MNSS Payroll System</p>
             </footer>
         </div>
     </form>
