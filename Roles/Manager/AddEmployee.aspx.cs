@@ -13,6 +13,8 @@ using Group_3_MNSS_Payroll_System.Accountant;
 using Group_3_MNSS_Payroll_System.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.BuilderProperties;
+using System.Security.Policy;
 
 namespace Group_3_MNSS_Payroll_System.Permissions.Manager
 {
@@ -47,6 +49,7 @@ namespace Group_3_MNSS_Payroll_System.Permissions.Manager
 
             //***********************Creating employee user
             var userManager = Context.GetOwinContext().Get<ApplicationUserManager>();
+            //Note that manager will assign employees a company email in order to log in
             string email = EM1.Text;
             //***********************Check if user is already present
             var search1 = userManager.FindByEmail(email);
@@ -86,13 +89,34 @@ namespace Group_3_MNSS_Payroll_System.Permissions.Manager
             Result.Text = "Changes successfully saved.";
         }
 
-        //Sets the sizes of the row edit textboxes
-        protected void RowEdit(object sender, GridViewEditEventArgs e)
+        protected void RowDelete(object sender, GridViewDeleteEventArgs e)
         {
-            //Get index of row being edited
-            AddList.EditIndex = e.NewEditIndex;
-            AddList.EditRowStyle.Width = 0;
+            //get the email of the employee that was deleted and remove their log in credentials from the system
+            GridViewRow row = AddList.Rows[e.RowIndex];
+            string email = row.Cells[5].Text;
 
+            //Make new SQL Connection
+            string connection = WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            SqlConnection con = new SqlConnection(connection);
+
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
+
+
+            //Create a command to delete the values from the database
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText =
+                "Delete from [dbo].[AspNetUsers] where email = @email";
+            //Add values as parameters for query
+            cmd.Parameters.AddWithValue("@email", email);
+            //Execute the query
+            cmd.ExecuteNonQuery();
+            //Clear the parameters
+            cmd.Parameters.Clear();
         }
     }
 }

@@ -38,6 +38,8 @@ namespace Group_3_MNSS_Payroll_System.Account
                 switch (result)
                 {
                     case SignInStatus.Success:
+                        //Save the email in a session variable
+                        Session["email"] = Email.Text;
                         IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                         break;
                     case SignInStatus.LockedOut:

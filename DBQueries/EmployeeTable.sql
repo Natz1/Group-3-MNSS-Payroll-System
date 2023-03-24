@@ -10,3 +10,4 @@
     [JobTitle] VARCHAR(50) NULL, 
     [Salary] MONEY NULL
 )
+

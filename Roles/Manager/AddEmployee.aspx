@@ -59,7 +59,7 @@
     <!--GridView of data-->
     <asp:GridView ID="AddList" DataSourceID="AddData"  runat="server" 
         CssClass="gridcss" AllowPaging="True" PageSize="20" AutoGenerateColumns="False" DataKeyNames="Id" 
-        OnRowEditing="RowEdit">
+         OnRowDeleting="RowDelete">
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
             <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" ControlStyle-Width="80" />
