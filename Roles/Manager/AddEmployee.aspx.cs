@@ -60,22 +60,18 @@ namespace Group_3_MNSS_Payroll_System.Permissions.Manager
         {
             //Refresh the page
             Response.Redirect("AddEmployee");
-            //Create a command to get the values from the database
-            /*SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText =
-                "Select * from Employee";
-            cmd.ExecuteNonQuery();
-
-            //Store employee data values in list view
-            DataTable dt = new DataTable();
-            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-            adapt.Fill(dt);
-            GridView1.DataSource = dt;
-            GridView1.DataBind();*/
 
             //State Changes have been saved
             Result.Text = "Changes successfully saved.";
+        }
+
+        //Sets the sizes of the row edit textboxes
+        protected void RowEdit(object sender, GridViewEditEventArgs e)
+        {
+            //Get index of row being edited
+            AddList.EditIndex = e.NewEditIndex;
+            AddList.EditRowStyle.Width = 0;
+
         }
     }
 }

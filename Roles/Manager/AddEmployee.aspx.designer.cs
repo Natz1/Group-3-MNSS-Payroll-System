@@ -177,21 +177,21 @@ namespace Group_3_MNSS_Payroll_System.Permissions.Manager
         protected global::System.Web.UI.WebControls.Label Result;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// AddData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource AddData;
 
         /// <summary>
-        /// GridView1 control.
+        /// AddList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView AddList;
     }
 }

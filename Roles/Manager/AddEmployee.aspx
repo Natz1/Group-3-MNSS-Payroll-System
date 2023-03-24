@@ -51,20 +51,22 @@
     <!--Display employee record-->
     <br /><br />
     <!--Link sql database to gridview-->
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [Employee]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="AddData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [Employee]"></asp:SqlDataSource>
     <!--GridView of data-->
-    <asp:GridView ID="GridView1" DataSourceID="SqlDataSource1"  runat="server" 
-        CssClass="gridcss" AllowPaging="True" PageSize="5" AutoGenerateColumns="False" DataKeyNames="Id" >
+    <asp:GridView ID="AddList" DataSourceID="AddData"  runat="server" 
+        CssClass="gridcss" AllowPaging="True" PageSize="20" AutoGenerateColumns="False" DataKeyNames="Id" 
+        OnRowEditing="RowEdit">
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
-            <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
-            <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
-            <asp:BoundField DataField="DOB" HeaderText="DOB" SortExpression="DOB" />
-            <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
-            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-            <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
-            <asp:BoundField DataField="JobTitle" HeaderText="JobTitle" SortExpression="JobTitle" />
-            <asp:BoundField DataField="Salary" HeaderText="Salary" SortExpression="Salary" />
+            <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" ControlStyle-Width="80" />
+            <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" ControlStyle-Width="80" />
+            <asp:BoundField DataField="DOB" HeaderText="DOB" SortExpression="DOB" ControlStyle-Width="70" />
+            <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" ControlStyle-Width="230" />
+            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" ControlStyle-Width="170" />
+            <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" ControlStyle-Width="100" />
+            <asp:BoundField DataField="JobTitle" HeaderText="JobTitle" SortExpression="JobTitle" ControlStyle-Width="100" />
+            <asp:BoundField DataField="Salary" HeaderText="Salary" SortExpression="Salary" ControlStyle-Width="70" />
+            <asp:CommandField ItemStyle-ForeColor="#184F07" ShowEditButton="True" ShowDeleteButton="True" />
         </Columns>
         <HeaderStyle CssClass="header"></HeaderStyle>
         <RowStyle CssClass="rows"></RowStyle>
