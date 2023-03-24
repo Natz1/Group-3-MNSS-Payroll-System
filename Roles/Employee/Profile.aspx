@@ -3,15 +3,20 @@
 
     <h2>View Employee Profile</h2>
 
-    <asp:SqlDataSource ID="EmpData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [Employee] WHERE ([Email] = @Email)">
+    <asp:SqlDataSource ID="EmpData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [Employee] WHERE ([Email] = @Email)" UpdateCommand="UPDATE Employee SET Address = @address, Phone = @phone WHERE (Id = @id)">
         <SelectParameters>
             <asp:SessionParameter Name="Email" SessionField="email" Type="String" />
         </SelectParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="address" />
+            <asp:Parameter Name="phone" />
+            <asp:Parameter Name="id" />
+        </UpdateParameters>
     </asp:SqlDataSource>
 
     <asp:ListView ID="EmpList" runat="server" DataKeyNames="Id" 
         DataSourceID="EmpData" EnableEdit="true" InsertItemPosition="None"
-        OnItemEditing="Editing" OnItemUpdating="Updating">
+        >
         <AlternatingItemTemplate>
             <li style="background-color: #FAFAD2;color: #284775;">Id:
                 <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
@@ -59,7 +64,7 @@
                 <asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' />
                 <br />
                 Email:
-                <asp:TextBox ID="EmailTextBox" runat="server" Text='<%# Bind("Email") %>' />
+                <asp:TextBox ID="EmailTextBox" runat="server" Text='<%# Bind("Email") %>' ReadOnly="True" BackColor="#CCCCCC"/>
                 <br />
                 Phone:
                 <asp:TextBox ID="PhoneTextBox" runat="server" Text='<%# Bind("Phone") %>' />
