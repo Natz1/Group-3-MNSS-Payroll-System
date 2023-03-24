@@ -15,6 +15,60 @@ namespace Group_3_MNSS_Payroll_System.Employee
     {
 
         /// <summary>
+        /// ID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ID;
+
+        /// <summary>
+        /// ID1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ID1;
+
+        /// <summary>
+        /// FirstName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FirstName;
+
+        /// <summary>
+        /// FirstName1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox FirstName1;
+
+        /// <summary>
+        /// LastName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LastName;
+
+        /// <summary>
+        /// LastName1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LastName1;
+
+        /// <summary>
         /// Type control.
         /// </summary>
         /// <remarks>
@@ -87,22 +141,22 @@ namespace Group_3_MNSS_Payroll_System.Employee
         protected global::System.Web.UI.WebControls.TextBox ReturnDate1;
 
         /// <summary>
-        /// Response control.
+        /// Responses control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Response;
+        protected global::System.Web.UI.WebControls.Label Responses;
 
         /// <summary>
-        /// Response1 control.
+        /// Responses1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Response1;
+        protected global::System.Web.UI.WebControls.TextBox Responses1;
 
         /// <summary>
         /// Submit control.
@@ -114,6 +168,15 @@ namespace Group_3_MNSS_Payroll_System.Employee
         protected global::System.Web.UI.WebControls.Button Submit;
 
         /// <summary>
+        /// LeaveData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource LeaveData;
+
+        /// <summary>
         /// Result control.
         /// </summary>
         /// <remarks>
@@ -121,5 +184,14 @@ namespace Group_3_MNSS_Payroll_System.Employee
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Result;
+
+        /// <summary>
+        /// LeaveList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView LeaveList;
     }
 }
