@@ -51,10 +51,21 @@
     <!--Display employee record-->
     <br /><br />
     <!--Link sql database to gridview-->
-    <asp:SqlDataSource ID="AddData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [Employee]" DeleteCommand="DELETE FROM Employee WHERE (Id = @id)">
+    <asp:SqlDataSource ID="AddData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [Employee]" DeleteCommand="DELETE FROM Employee WHERE (Id = @id)" UpdateCommand="UPDATE Employee SET FirstName = @firstname, LastName = @lastname, DOB = @dob, Address = @address, Email = @email, Phone = @phone, JobTitle = @jobtitle, Salary = @salary WHERE (Id = @id)">
         <DeleteParameters>
             <asp:Parameter Name="id" />
         </DeleteParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="firstname" />
+            <asp:Parameter Name="lastname" />
+            <asp:Parameter Name="dob" />
+            <asp:Parameter Name="address" />
+            <asp:Parameter Name="email" />
+            <asp:Parameter Name="phone" />
+            <asp:Parameter Name="jobtitle" />
+            <asp:Parameter Name="salary" />
+            <asp:Parameter Name="id" />
+        </UpdateParameters>
     </asp:SqlDataSource>
     <!--GridView of data-->
     <asp:GridView ID="AddList" DataSourceID="AddData"  runat="server" 
