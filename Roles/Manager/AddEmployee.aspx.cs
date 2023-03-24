@@ -9,6 +9,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Services.Description;
 using System.Web.Configuration;
+using Group_3_MNSS_Payroll_System.Accountant;
+using Group_3_MNSS_Payroll_System.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace Group_3_MNSS_Payroll_System.Permissions.Manager
 {
@@ -41,6 +45,22 @@ namespace Group_3_MNSS_Payroll_System.Permissions.Manager
                 ",'" + ADDR1.Text +"','" + EM1.Text +"','" + PHN1.Text +"','" + TITLE1.Text + "', '" + SAL1.Text +"')";
             cmd.ExecuteNonQuery();
 
+            //***********************Creating employee user
+            var userManager = Context.GetOwinContext().Get<ApplicationUserManager>();
+            string email = EM1.Text;
+            //***********************Check if user is already present
+            var search1 = userManager.FindByEmail(email);
+            if (search1 == null)
+            {
+                var user = new ApplicationUser()
+                {
+                    UserName = EM1.Text,
+                    Email = EM1.Text
+                };
+                IdentityResult result = userManager.Create(user, "Emp123!"); //Default Password
+                userManager.AddToRole(user.Id, "employee");
+            }
+
             //Make textboxes empty again
             FN1.Text = "";
             LN1.Text = "";
@@ -50,6 +70,7 @@ namespace Group_3_MNSS_Payroll_System.Permissions.Manager
             PHN1.Text = "";
             TITLE1.Text = "";
             SAL1.Text = "";
+
 
             //Call display function
             employeeRec();

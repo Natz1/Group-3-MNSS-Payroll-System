@@ -51,7 +51,11 @@
     <!--Display employee record-->
     <br /><br />
     <!--Link sql database to gridview-->
-    <asp:SqlDataSource ID="AddData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [Employee]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="AddData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [Employee]" DeleteCommand="DELETE FROM Employee WHERE (Id = @id)">
+        <DeleteParameters>
+            <asp:Parameter Name="id" />
+        </DeleteParameters>
+    </asp:SqlDataSource>
     <!--GridView of data-->
     <asp:GridView ID="AddList" DataSourceID="AddData"  runat="server" 
         CssClass="gridcss" AllowPaging="True" PageSize="20" AutoGenerateColumns="False" DataKeyNames="Id" 
