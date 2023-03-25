@@ -48,7 +48,7 @@
     </table>
 
     <!--Connect form to database-->
-    <asp:SqlDataSource ID="LeaveData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" InsertCommand="INSERT INTO LeaveRequest(Id, FirstName, LastName, Type, Reason, LeaveDate, ReturnDate, Response) VALUES (@id, @firstname, @lastname, @type, @reason, @leavedate, @returndate, @response)" SelectCommand="SELECT LeaveRequest.* FROM LeaveRequest INNER JOIN LeaveRequest AS LeaveRequest_1 ON LeaveRequest.Id = LeaveRequest_1.Id">
+    <asp:SqlDataSource ID="LeaveData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" InsertCommand="INSERT INTO LeaveRequest(Id, FirstName, LastName, Type, Reason, LeaveDate, ReturnDate, Response) VALUES (@id, @firstname, @lastname, @type, @reason, @leavedate, @returndate, @response)" SelectCommand="SELECT LeaveRequest.* FROM LeaveRequest">
         <InsertParameters>
             <asp:ControlParameter Name="id" ControlID="ID1" />
             <asp:ControlParameter Name="firstname" ControlID="FirstName1" />
@@ -69,9 +69,9 @@
 
     <hr />
     <h2>View Past Leave Requests</h2>
-    <asp:ListView ID="LeaveList" runat="server" DataSourceID="LeaveData">
+    <asp:ListView ID="LeaveList" runat="server" DataKeyNames="Id,LeaveRequestID" DataSourceID="LeaveData" PageSize="2">
         <AlternatingItemTemplate>
-            <li style="background-color: #FAFAD2;color: #284775;">Id:
+            <li style="background-color: #FFF8DC;">Id:
                 <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
                 <br />
                 LeaveRequestID:
@@ -101,8 +101,8 @@
             </li>
         </AlternatingItemTemplate>
         <EditItemTemplate>
-            <li style="background-color: #AFE1AF;color: #000000;">Id:
-                <asp:TextBox ID="IdTextBox" runat="server" Text='<%# Bind("Id") %>' />
+            <li style="background-color: #AFE1AF;color: #FFFFFF;">Id:
+                <asp:Label ID="IdLabel1" runat="server" Text='<%# Eval("Id") %>' />
                 <br />
                 LeaveRequestID:
                 <asp:Label ID="LeaveRequestIDLabel1" runat="server" Text='<%# Eval("LeaveRequestID") %>' />
@@ -161,7 +161,7 @@
 <br />
         </ItemSeparatorTemplate>
         <ItemTemplate>
-            <li style="background-color: #AFE1AF;color: #333333;">Id:
+            <li style="background-color: #AFE1AF;color: #000000;">Id:
                 <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
                 <br />
                 LeaveRequestID:
@@ -194,7 +194,7 @@
             <ul id="itemPlaceholderContainer" runat="server" style="font-family: Verdana, Arial, Helvetica, sans-serif;">
                 <li runat="server" id="itemPlaceholder" />
             </ul>
-            <div style="text-align: center;background-color: #AFE1AF;font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333;">
+            <div style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;">
                 <asp:DataPager ID="DataPager1" runat="server">
                     <Fields>
                         <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
@@ -203,7 +203,7 @@
             </div>
         </LayoutTemplate>
         <SelectedItemTemplate>
-            <li style="background-color: #FFCC66;font-weight: bold;color: #000080;">Id:
+            <li style="background-color: #008A8C;font-weight: bold;color: #FFFFFF;">Id:
                 <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
                 <br />
                 LeaveRequestID:

@@ -10,7 +10,7 @@
             <asp:Parameter Name="id" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <asp:ListView ID="LeaveList" runat="server" DataKeyNames="Id,LeaveRequestID" DataSourceID="LeaveData">
+    <asp:ListView ID="LeaveList" runat="server" DataKeyNames="Id,LeaveRequestID" DataSourceID="LeaveData" PageSize="3">
         <AlternatingItemTemplate>
             <li style="background-color: #FFF8DC;">Id:
                 <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
