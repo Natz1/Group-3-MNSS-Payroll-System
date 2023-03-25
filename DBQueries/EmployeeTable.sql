@@ -38,24 +38,30 @@ Select * from LeaveRequest
 --Stores the employee's daily hours worked
 CREATE TABLE DailyHours
 (
-    [Id]  INT NOT NULL  PRIMARY KEY,
+    [Id]  INT NOT NULL,
+    [DailyLogId]  INT NOT NULL  IDENTITY(1,1),
     [ClockInDate] DATETIME NOT NULL, 
     [ClockOutDate] DATETIME NULL, 
     [HoursWorked] INT NULL,
     [DailyActivities] VARCHAR(1000) NULL,
-    Constraint fk_id1 foreign key ([Id]) references Employee ([Id])
+    Constraint fk_id1 foreign key ([Id]) references Employee ([Id]),
+    Constraint pk_daily primary key ([Id], [DailyLogId])
 )
 
 Select * from DailyHours
 
+Drop table DailyHours
+
 --Stores employee's total hours worked for the month
 CREATE TABLE MonthlyHours
 (
-    [Id]  INT NOT NULL  PRIMARY KEY,
+    [Id]  INT NOT NULL,
+    [MonthlyLogId]  INT NOT NULL  IDENTITY(1,1),
     [CurrentMonth] VARCHAR(50) NOT NULL,
     [CurrentYear] INT NOT NULL,
     [MonthlyHoursWorked] INT NOT NULL,
-    Constraint fk_id2 foreign key ([Id]) references Employee ([Id])
+    Constraint fk_id2 foreign key ([Id]) references Employee ([Id]),
+    Constraint pk_monthly primary key ([Id], [MonthlyLogId])
 )
 
 Select * from MonthlyHours
