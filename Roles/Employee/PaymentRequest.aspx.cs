@@ -43,5 +43,11 @@ namespace Group_3_MNSS_Payroll_System.Employee
             cmd.CommandText = "Select LastName from Employee where email = @email";
             LN.Text = cmd.ExecuteScalar().ToString();
         }
+
+        protected void Submit_Click(object sender, EventArgs e)
+        {
+            RequestData.Insert();
+            Response.Redirect("SendRequest");
+        }
     }
 }

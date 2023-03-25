@@ -47,11 +47,24 @@
         </tr>
         <tr>
             <td>
-                <asp:Button ID="Submit" runat="server" Text="Submit Application" />
+                <asp:Button ID="Submit" runat="server" Text="Submit Application" OnClick="Submit_Click" />
             </td>
         </tr>
     </table>
     <hr />
+
+    <asp:SqlDataSource ID="RequestData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" InsertCommand="INSERT INTO PaymentRequest(Id, FirstName, LastName, Date, Amount, Reason) VALUES (@id, @firstname, @lastname, @date, @amount, @reason)" SelectCommand="SELECT PaymentRequest.* FROM PaymentRequest">
+        <InsertParameters>
+            <asp:ControlParameter ControlID="ID" Name="id" />
+            <asp:ControlParameter ControlID="FN" Name="firstname" />
+            <asp:ControlParameter ControlID="LN"  Name="lastname" />
+            <asp:ControlParameter ControlID="Date"  Name="date" />
+            <asp:ControlParameter ControlID="Amount"  Name="amount" />
+            <asp:ControlParameter ControlID="Reason"  Name="reason" />
+        </InsertParameters>
+    </asp:SqlDataSource>
+
+
 
     <h2>View Salary Information</h2>
 </asp:Content>
