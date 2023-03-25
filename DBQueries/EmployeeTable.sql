@@ -68,7 +68,7 @@ Select * from MonthlyHours
 
 
 --Create stored procedure to calculate monthly hours
-Create procedure MonthlyWork(@id int)
+Alter procedure MonthlyWork(@id int)
 As
 Begin
     --if record exists for current month and current year then update it,
@@ -76,25 +76,48 @@ Begin
     if not exists (Select CurrentMonth from MonthlyHours where id = @id and CurrentMonth = month(GetDate())) and 
     not exists (Select CurrentYear from MonthlyHours where id = @id and CurrentYear = year(GetDate()))
     Begin
-        --Based on the month and year find the total hours worked
-        --for this month
-        Insert into MonthlyHours Values(@id, month(GetDate()), year(getdate()),
-            (Select sum(HoursWorked) from DailyHours where month(ClockInDate) = month(GetDate()) and 
-            year(ClockInDate) = year(getdate()) and id = @id))
+        --If there are no hours worked for the month set monthly hours worked to 0
+        if not exists (Select ClockOutDate from DailyHours where id = @id 
+        and month(ClockOutDate) = month(GetDate()) and 
+                year(ClockOutDate) = year(getdate()))
+        Begin
+            --Based on the month and year find the total hours worked
+            --for this month
+            Insert into MonthlyHours Values(@id, month(GetDate()), year(getdate()), 0)
+        End
+        Else
+        Begin
+            --Based on the month and year find the total hours worked
+            --for this month
+            Insert into MonthlyHours Values(@id, month(GetDate()), year(getdate()),
+                (Select sum(isnull(HoursWorked,0)) from DailyHours where month(ClockInDate) = month(GetDate()) and 
+                year(ClockInDate) = year(getdate()) and id = @id))
+        End
     End
     Else
     Begin
-        --Based on the month and year find the total hours worked
-        --for this month
-        Update MonthlyHours Set MonthlyHoursWorked = (Select sum(HoursWorked) from DailyHours where month(ClockInDate) = month(GetDate()) and 
-            year(ClockInDate) = year(getdate()) and id = @id) Where id = @id
+        --If there are no hours worked for the month set monthly hours worked to 0
+        if not exists (Select ClockOutDate from DailyHours where id = @id 
+        and month(ClockOutDate) = month(GetDate()) and 
+                year(ClockOutDate) = year(getdate()))
+        Begin
+            Update MonthlyHours Set MonthlyHoursWorked = 0 Where id = @id
+        End
+        Else
+        Begin
+            --Based on the month and year find the total hours worked
+            --for this month
+            Update MonthlyHours Set MonthlyHoursWorked = 
+            (Select sum(isnull(HoursWorked,0)) from DailyHours where month(ClockInDate) = month(GetDate()) and 
+                year(ClockInDate) = year(getdate()) and id = @id) Where id = @id
+        End
     End
     
     Select * from MonthlyHours where id = @id
 End
 Go
 
-Exec MonthlyWork [ID]
+Exec MonthlyWork '6'
 
 --Stores the payment request information
 CREATE TABLE PaymentRequest
