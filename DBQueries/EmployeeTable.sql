@@ -94,4 +94,20 @@ Begin
 End
 Go
 
-Exec MonthlyWork '5'
+Exec MonthlyWork [ID]
+
+--Stores the payment request information
+CREATE TABLE PaymentRequest
+(
+    [Id]  INT NOT NULL,
+    [PayRequestID] INT NOT NULL IDENTITY(1,1),
+    [FirstName] VARCHAR(50) NOT NULL, 
+    [LastName] VARCHAR(50) NOT NULL, 
+    [Date] DATETIME NOT NULL,
+    [Amount] MONEY NOT NULL,
+    [Reason] VARCHAR(1000) NOT NULL,
+    Constraint fk_id3 foreign key ([Id]) references Employee ([Id]),
+    Constraint pk_pay primary key ([Id], [PayRequestID])
+)
+
+Select * from PaymentRequest
