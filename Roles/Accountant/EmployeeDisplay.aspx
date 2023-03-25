@@ -1,24 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Group_3_MNSS_Payroll_System.Employee.Profile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EmployeeDisplay.aspx.cs" Inherits="Group_3_MNSS_Payroll_System.Roles.Accountant.EmployeeDisplay" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>View Employee Profile</h2>
-
-    <asp:SqlDataSource ID="EmpData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [Employee] WHERE ([Email] = @Email)" UpdateCommand="UPDATE Employee SET Address = @address, Phone = @phone WHERE (Id = @id)">
+    <!--Allows manager to view all details on file about the employee-->
+    <h2>View Employee Record</h2>
+    <asp:SqlDataSource ID="RecData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT Employee.* FROM Employee Where ID = @id">
         <SelectParameters>
-            <asp:SessionParameter Name="Email" SessionField="email" Type="String" />
+            <asp:QueryStringParameter Name="id" QueryStringField="id" />
         </SelectParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="address" />
-            <asp:Parameter Name="phone" />
-            <asp:Parameter Name="id" />
-        </UpdateParameters>
     </asp:SqlDataSource>
-
-    <asp:ListView ID="EmpList" runat="server" DataKeyNames="Id" 
-        DataSourceID="EmpData" EnableEdit="true" InsertItemPosition="None"
-        >
+    <asp:ListView ID="RecList" runat="server" DataSourceID="RecData" DataKeyNames="Id">
         <AlternatingItemTemplate>
-            <li style="background-color: #FAFAD2;color: #284775;">Id:
+            <li style="background-color: #FFF8DC;">Id:
                 <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
                 <br />
                 FirstName:
@@ -52,28 +44,28 @@
                 <asp:Label ID="IdLabel1" runat="server" Text='<%# Eval("Id") %>' />
                 <br />
                 FirstName:
-                <asp:TextBox ID="FirstNameTextBox" runat="server" Text='<%# Bind("FirstName") %>' ReadOnly="True" BackColor="#CCCCCC" />
+                <asp:TextBox ID="FirstNameTextBox" runat="server" Text='<%# Bind("FirstName") %>' />
                 <br />
                 LastName:
-                <asp:TextBox ID="LastNameTextBox" runat="server" Text='<%# Bind("LastName") %>' ReadOnly="True" BackColor="#CCCCCC"/>
+                <asp:TextBox ID="LastNameTextBox" runat="server" Text='<%# Bind("LastName") %>' />
                 <br />
                 DOB:
-                <asp:TextBox ID="DOBTextBox" runat="server" Text='<%# Bind("DOB") %>' ReadOnly="True" BackColor="#CCCCCC"/>
+                <asp:TextBox ID="DOBTextBox" runat="server" Text='<%# Bind("DOB") %>' />
                 <br />
                 Address:
                 <asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' />
                 <br />
                 Email:
-                <asp:TextBox ID="EmailTextBox" runat="server" Text='<%# Bind("Email") %>' ReadOnly="True" BackColor="#CCCCCC"/>
+                <asp:TextBox ID="EmailTextBox" runat="server" Text='<%# Bind("Email") %>' />
                 <br />
                 Phone:
                 <asp:TextBox ID="PhoneTextBox" runat="server" Text='<%# Bind("Phone") %>' />
                 <br />
                 JobTitle:
-                <asp:TextBox ID="JobTitleTextBox" runat="server" Text='<%# Bind("JobTitle") %>' ReadOnly="True" BackColor="#CCCCCC"/>
+                <asp:TextBox ID="JobTitleTextBox" runat="server" Text='<%# Bind("JobTitle") %>' />
                 <br />
                 Salary:
-                <asp:TextBox ID="SalaryTextBox" runat="server" Text='<%# Bind("Salary") %>' ReadOnly="True" BackColor="#CCCCCC" />
+                <asp:TextBox ID="SalaryTextBox" runat="server" Text='<%# Bind("Salary") %>' />
                 <br />
                 <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
                 <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
@@ -108,7 +100,7 @@
 <br />
         </ItemSeparatorTemplate>
         <ItemTemplate>
-            <li style="background-color: #AFE1AF;color: #333333;">Id:
+            <li style="background-color: #AFE1AF;color: #000000;">Id:
                 <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
                 <br />
                 FirstName:
@@ -135,19 +127,17 @@
                 Salary:
                 <asp:Label ID="SalaryLabel" runat="server" Text='<%# Eval("Salary") %>' />
                 <br />
-                <asp:Button runat="server" Text="Edit" CommandName="Edit" CommandArgument="<%# Container.DataItemIndex %>" />
-                <br />
             </li>
         </ItemTemplate>
         <LayoutTemplate>
             <ul id="itemPlaceholderContainer" runat="server" style="font-family: Verdana, Arial, Helvetica, sans-serif;">
                 <li runat="server" id="itemPlaceholder" />
             </ul>
-            <div style="text-align: center;background-color: #FFCC66;font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333;">
+            <div style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;">
             </div>
         </LayoutTemplate>
         <SelectedItemTemplate>
-            <li style="background-color: #FFCC66;font-weight: bold;color: #000080;">Id:
+            <li style="background-color: #008A8C;font-weight: bold;color: #FFFFFF;">Id:
                 <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
                 <br />
                 FirstName:
@@ -177,7 +167,4 @@
             </li>
         </SelectedItemTemplate>
     </asp:ListView>
-
-
-
 </asp:Content>

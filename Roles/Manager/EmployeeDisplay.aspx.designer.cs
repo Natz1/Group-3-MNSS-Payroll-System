@@ -7,45 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Group_3_MNSS_Payroll_System.Account {
-    
-    
-    public partial class Register {
-        
+namespace Group_3_MNSS_Payroll_System.Roles.Manager
+{
+
+
+    public partial class EmployeeDisplay
+    {
+
         /// <summary>
-        /// ErrorMessage control.
+        /// RecData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ErrorMessage;
-        
+        protected global::System.Web.UI.WebControls.SqlDataSource RecData;
+
         /// <summary>
-        /// Email control.
+        /// RecList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Email;
-        
+        protected global::System.Web.UI.WebControls.ListView RecList;
+
         /// <summary>
-        /// Password control.
+        /// PerfData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password;
-        
+        protected global::System.Web.UI.WebControls.SqlDataSource PerfData;
+
         /// <summary>
-        /// ConfirmPassword control.
+        /// PerfList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConfirmPassword;
+        protected global::System.Web.UI.WebControls.GridView PerfList;
     }
 }
