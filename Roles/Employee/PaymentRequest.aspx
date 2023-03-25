@@ -27,7 +27,7 @@
                 <asp:TextBox ID="Date" runat="server" TextMode="Date"></asp:TextBox>
             </td>
             <td>
-                <asp:TextBox ID="Amount" runat="server" Width="120px"></asp:TextBox>
+                <asp:TextBox ID="Amount" runat="server" Width="120px" TextMode="Number"></asp:TextBox>
             </td>
         </tr>
     </table>
