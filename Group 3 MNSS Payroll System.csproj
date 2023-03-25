@@ -184,6 +184,7 @@
     <Content Include="Images\money.jpg" />
     <Content Include="Roles\Accountant\EmployeeDisplay.aspx" />
     <Content Include="Roles\Accountant\PaymentRequests.aspx" />
+    <Content Include="Roles\Accountant\SalaryCalculation.aspx" />
     <Content Include="Roles\Accountant\Search.aspx" />
     <Content Include="Roles\Employee\ClockInOut.aspx" />
     <Content Include="Roles\Employee\LeaveRequest.aspx" />
@@ -316,6 +317,13 @@
     </Compile>
     <Compile Include="Roles\Accountant\PaymentRequests.aspx.designer.cs">
       <DependentUpon>PaymentRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Roles\Accountant\SalaryCalculation.aspx.cs">
+      <DependentUpon>SalaryCalculation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\Accountant\SalaryCalculation.aspx.designer.cs">
+      <DependentUpon>SalaryCalculation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Roles\Accountant\Search.aspx.cs">
       <DependentUpon>Search.aspx</DependentUpon>

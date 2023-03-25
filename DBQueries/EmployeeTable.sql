@@ -129,8 +129,10 @@ CREATE TABLE PaymentRequest
     [Date] DATETIME NOT NULL,
     [Amount] MONEY NOT NULL,
     [Reason] VARCHAR(1000) NOT NULL,
+    [Status] VARCHAR(50) NOT NULL Default 'Pending',
     Constraint fk_id3 foreign key ([Id]) references Employee ([Id]),
-    Constraint pk_pay primary key ([Id], [PayRequestID])
+    Constraint pk_pay primary key ([Id], [PayRequestID]),
+    Constraint ck_status check (Status in ('Completed','Rejected', 'Pending')),
 )
 
 Select * from PaymentRequest
