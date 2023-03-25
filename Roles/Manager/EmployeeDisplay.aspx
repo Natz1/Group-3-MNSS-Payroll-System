@@ -184,7 +184,7 @@
             <asp:QueryStringParameter DefaultValue="0" Name="Id" QueryStringField="id" Type="Int32" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="DailyList" runat="server" PageSize="5" AllowPaging="True" DataSourceID="DailyData" AutoGenerateColumns="False" DataKeyNames="Id,DailyLogId">
+    <asp:GridView ID="DailyList" runat="server" PageSize="5" Width="1000px" AllowPaging="True" DataSourceID="DailyData" AutoGenerateColumns="False" DataKeyNames="Id,DailyLogId">
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
             <asp:BoundField DataField="DailyLogId" HeaderText="DailyLogId" InsertVisible="False" ReadOnly="True" SortExpression="DailyLogId" />
@@ -209,7 +209,7 @@
             <asp:QueryStringParameter DefaultValue="0" Name="id" QueryStringField="id" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="PerfList" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Id,MonthlyLogId" DataSourceID="PerfData">
+    <asp:GridView ID="PerfList" runat="server" PageSize="5" AllowPaging="True" Width="1000px" AutoGenerateColumns="False" DataKeyNames="Id,MonthlyLogId" DataSourceID="PerfData">
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
             <asp:BoundField DataField="MonthlyLogId" HeaderText="MonthlyLogId" InsertVisible="False" ReadOnly="True" SortExpression="MonthlyLogId" />

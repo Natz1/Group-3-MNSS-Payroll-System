@@ -70,7 +70,7 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     <!--GridView of data-->
-    <asp:GridView ID="AddList" DataSourceID="AddData"  runat="server" 
+    <asp:GridView ID="AddList" DataSourceID="AddData"  runat="server" Width="1000px"
         CssClass="gridcss" AllowPaging="True" PageSize="20" AutoGenerateColumns="False" DataKeyNames="Id" 
          OnRowDeleting="RowDelete">
         <Columns>

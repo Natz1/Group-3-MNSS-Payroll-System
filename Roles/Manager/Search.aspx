@@ -43,7 +43,7 @@
             <asp:ControlParameter ControlID="LN" Name="LastName" PropertyName="Text" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="EmpList" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Id" 
+    <asp:GridView ID="EmpList" runat="server" Width="1000px" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Id" 
         DataSourceID="EmpData" OnSelectedIndexChanged="Viewing">
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
