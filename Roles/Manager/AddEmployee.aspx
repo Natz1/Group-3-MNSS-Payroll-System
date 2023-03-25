@@ -49,7 +49,9 @@
     
 
     <!--Display employee record-->
-    <br /><br />
+    <br />
+    <hr />
+    <h2>Edit Employee Details</h2>
     <!--Link sql database to gridview-->
     <asp:SqlDataSource ID="AddData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [Employee]" DeleteCommand="DELETE FROM Employee WHERE (Id = @id)" UpdateCommand="UPDATE Employee SET FirstName = @firstname, LastName = @lastname, DOB = @dob, Address = @address, Email = @email, Phone = @phone, JobTitle = @jobtitle, Salary = @salary WHERE (Id = @id)">
         <DeleteParameters>

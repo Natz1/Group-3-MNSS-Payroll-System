@@ -45,13 +45,6 @@ namespace Group_3_MNSS_Payroll_System.Employee
 
 
 
-            //Check the manager's response status
-            cmd.CommandText = "Select Response from LeaveRequest where ID = @ID";
-            //Add id parameter to query
-            cmd.Parameters.AddWithValue("@ID", ID1.Text);
-
-            object response = cmd.ExecuteScalar();
-
             //Set textbox value to pending
             Responses1.Text = "Pending";
 

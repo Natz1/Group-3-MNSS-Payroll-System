@@ -166,4 +166,34 @@
             </li>
         </SelectedItemTemplate>
     </asp:ListView>
+    <br />
+
+
+
+
+
+
+
+
+
+
+    <h2>View Employee Performance</h2>
+    <asp:SqlDataSource ID="PerfData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="MonthlyWork" SelectCommandType="StoredProcedure">
+        <SelectParameters>
+            <asp:QueryStringParameter DefaultValue="0" Name="id" QueryStringField="id" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:GridView ID="PerfList" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Id,MonthlyLogId" DataSourceID="PerfData">
+        <Columns>
+            <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
+            <asp:BoundField DataField="MonthlyLogId" HeaderText="MonthlyLogId" InsertVisible="False" ReadOnly="True" SortExpression="MonthlyLogId" />
+            <asp:BoundField DataField="CurrentMonth" HeaderText="CurrentMonth" SortExpression="CurrentMonth" />
+            <asp:BoundField DataField="CurrentYear" HeaderText="CurrentYear" SortExpression="CurrentYear" />
+            <asp:BoundField DataField="MonthlyHoursWorked" HeaderText="MonthlyHoursWorked" SortExpression="MonthlyHoursWorked" />
+        </Columns>
+        <HeaderStyle CssClass="header"></HeaderStyle>
+        <EmptyDataTemplate>No data available.</EmptyDataTemplate>
+        <RowStyle CssClass="rows"></RowStyle>
+    </asp:GridView>
+
 </asp:Content>

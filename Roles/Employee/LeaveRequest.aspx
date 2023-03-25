@@ -66,6 +66,8 @@
     <asp:Label ID="Result" runat="server" Text=""></asp:Label>
 
 
+
+    <hr />
     <h2>View Past Leave Requests</h2>
     <asp:ListView ID="LeaveList" runat="server" DataSourceID="LeaveData">
         <AlternatingItemTemplate>

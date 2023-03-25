@@ -93,13 +93,15 @@
                                 read what they entail
                                 and approve or reject them-->
                         <li id="manager4" runat="server"><a runat="server" href="~/Roles/Manager/ReviewLeave">Leave Requests</a></li>
+
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
 
 
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
