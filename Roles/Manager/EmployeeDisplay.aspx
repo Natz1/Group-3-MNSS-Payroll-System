@@ -166,7 +166,7 @@
             </li>
         </SelectedItemTemplate>
     </asp:ListView>
-    <br />
+    <hr />
 
 
 
@@ -178,6 +178,32 @@
 
 
     <h2>View Employee Performance</h2>
+    <h3>Daily Performance</h3>
+    <asp:SqlDataSource ID="DailyData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [DailyHours] WHERE ([Id] = @Id)">
+        <SelectParameters>
+            <asp:QueryStringParameter DefaultValue="0" Name="Id" QueryStringField="id" Type="Int32" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:GridView ID="DailyList" runat="server" PageSize="5" AllowPaging="True" DataSourceID="DailyData" AutoGenerateColumns="False" DataKeyNames="Id,DailyLogId">
+        <Columns>
+            <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
+            <asp:BoundField DataField="DailyLogId" HeaderText="DailyLogId" InsertVisible="False" ReadOnly="True" SortExpression="DailyLogId" />
+            <asp:BoundField DataField="ClockInDate" HeaderText="ClockInDate" SortExpression="ClockInDate" />
+            <asp:BoundField DataField="ClockOutDate" HeaderText="ClockOutDate" SortExpression="ClockOutDate" />
+            <asp:BoundField DataField="HoursWorked" HeaderText="HoursWorked" SortExpression="HoursWorked" />
+            <asp:BoundField DataField="DailyActivities" HeaderText="DailyActivities" SortExpression="DailyActivities" />
+        </Columns>
+        <HeaderStyle CssClass="header"></HeaderStyle>
+        <EmptyDataTemplate>No data available.</EmptyDataTemplate>
+        <RowStyle CssClass="rows"></RowStyle>
+    </asp:GridView>
+    <hr />
+
+
+
+
+
+    <h3>Monthly Hours Worked</h3>
     <asp:SqlDataSource ID="PerfData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="MonthlyWork" SelectCommandType="StoredProcedure">
         <SelectParameters>
             <asp:QueryStringParameter DefaultValue="0" Name="id" QueryStringField="id" />
