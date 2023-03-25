@@ -39,7 +39,7 @@
             </li>
         </AlternatingItemTemplate>
         <EditItemTemplate>
-            <li style="background-color: #008A8C;color: #FFFFFF;">Id:
+            <li style="background-color: #AFE1AF;color: #000000;">Id:
                 <asp:Label ID="IdLabel1" runat="server" Text='<%# Eval("Id") %>' />
                 <br />
                 FirstName:
@@ -99,7 +99,7 @@
 <br />
         </ItemSeparatorTemplate>
         <ItemTemplate>
-            <li style="background-color: #DCDCDC;color: #000000;">Id:
+            <li style="background-color: #AFE1AF;color: #000000;">Id:
                 <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
                 <br />
                 FirstName:

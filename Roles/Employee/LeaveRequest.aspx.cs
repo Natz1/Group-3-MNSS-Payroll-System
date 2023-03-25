@@ -52,16 +52,9 @@ namespace Group_3_MNSS_Payroll_System.Employee
 
             object response = cmd.ExecuteScalar();
 
-            //Check if record exists in db
-            if(response == null || response == DBNull.Value)
-            {
-                Responses1.Text = "Pending";
-            }
-            else
-            {
-                Responses1.Text = response.ToString();
-            }
-            
+            //Set textbox value to pending
+            Responses1.Text = "Pending";
+
 
         }
 

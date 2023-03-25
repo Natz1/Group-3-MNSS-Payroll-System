@@ -99,7 +99,7 @@
             </li>
         </AlternatingItemTemplate>
         <EditItemTemplate>
-            <li style="background-color: #FFCC66;color: #000080;">Id:
+            <li style="background-color: #AFE1AF;color: #000000;">Id:
                 <asp:TextBox ID="IdTextBox" runat="server" Text='<%# Bind("Id") %>' />
                 <br />
                 LeaveRequestID:
@@ -159,7 +159,7 @@
 <br />
         </ItemSeparatorTemplate>
         <ItemTemplate>
-            <li style="background-color: #FFFBD6;color: #333333;">Id:
+            <li style="background-color: #AFE1AF;color: #333333;">Id:
                 <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
                 <br />
                 LeaveRequestID:
@@ -192,7 +192,7 @@
             <ul id="itemPlaceholderContainer" runat="server" style="font-family: Verdana, Arial, Helvetica, sans-serif;">
                 <li runat="server" id="itemPlaceholder" />
             </ul>
-            <div style="text-align: center;background-color: #FFCC66;font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333;">
+            <div style="text-align: center;background-color: #AFE1AF;font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333;">
                 <asp:DataPager ID="DataPager1" runat="server">
                     <Fields>
                         <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
