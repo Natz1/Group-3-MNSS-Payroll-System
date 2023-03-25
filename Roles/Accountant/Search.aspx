@@ -37,13 +37,15 @@
     <br />
 
 
-    <asp:SqlDataSource ID="EmpData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [Employee] WHERE (([FirstName] = @FirstName) AND ([LastName] = @LastName))">
+    <asp:SqlDataSource ID="EmpData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" 
+        SelectCommand="SELECT * FROM [Employee] WHERE (([FirstName] = @FirstName) AND ([LastName] = @LastName))">
         <SelectParameters>
             <asp:ControlParameter ControlID="FN" Name="FirstName" PropertyName="Text" Type="String" />
             <asp:ControlParameter ControlID="LN" Name="LastName" PropertyName="Text" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="EmpList" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="EmpData">
+    <asp:GridView ID="EmpList" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="EmpData" 
+        OnSelectedIndexChanged="Viewing">
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
             <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />

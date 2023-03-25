@@ -191,6 +191,7 @@
     <Content Include="Images\hLogo.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\money.jpg" />
+    <Content Include="Roles\Accountant\EmployeeDisplay.aspx" />
     <Content Include="Roles\Accountant\PaymentRequests.aspx" />
     <Content Include="Roles\Accountant\Search.aspx" />
     <Content Include="Roles\Employee\ClockInOut.aspx" />
@@ -373,6 +374,13 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\Accountant\EmployeeDisplay.aspx.cs">
+      <DependentUpon>EmployeeDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\Accountant\EmployeeDisplay.aspx.designer.cs">
+      <DependentUpon>EmployeeDisplay.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Roles\Accountant\PaymentRequests.aspx.cs">
       <DependentUpon>PaymentRequests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
