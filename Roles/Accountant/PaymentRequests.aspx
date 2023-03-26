@@ -78,9 +78,9 @@
                 Status:
                 <asp:Label ID="StatusLabel" runat="server" Text='<%# Eval("Status") %>' />
                 <br />
-                <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Response" />
                 &nbsp;
-                <asp:Button ID="SelectButton" runat="server" CommandName="Select" Text="View"  />
+                <asp:Button ID="SelectButton" runat="server" CommandName="Select" Text="Calculate Salary"  />
             </li>
         </ItemTemplate>
         <LayoutTemplate>
