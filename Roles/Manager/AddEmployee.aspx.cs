@@ -47,22 +47,46 @@ namespace Group_3_MNSS_Payroll_System.Permissions.Manager
                 ",'" + ADDR1.Text +"','" + EM1.Text +"','" + PHN1.Text +"','" + TITLE1.Text + "', '" + SAL1.Text +"')";
             cmd.ExecuteNonQuery();
 
-            //***********************Creating employee user
-            var userManager = Context.GetOwinContext().Get<ApplicationUserManager>();
-            //Note that manager will assign employees a company email in order to log in
-            string email = EM1.Text;
-            //***********************Check if user is already present
-            var search1 = userManager.FindByEmail(email);
-            if (search1 == null)
+            //If the employee type is not an accountant
+            if(TITLE1.Text != "Accountant")
             {
-                var user = new ApplicationUser()
+                //***********************Creating employee user
+                var userManager = Context.GetOwinContext().Get<ApplicationUserManager>();
+                //Note that manager will assign employees a company email in order to log in
+                string email = EM1.Text;
+                //***********************Check if user is already present
+                var search1 = userManager.FindByEmail(email);
+                if (search1 == null)
                 {
-                    UserName = EM1.Text,
-                    Email = EM1.Text
-                };
-                IdentityResult result = userManager.Create(user, "Emp123!"); //Default Password
-                userManager.AddToRole(user.Id, "employee");
+                    var user = new ApplicationUser()
+                    {
+                        UserName = EM1.Text,
+                        Email = EM1.Text
+                    };
+                    IdentityResult result = userManager.Create(user, "Emp123!"); //Default Password
+                    userManager.AddToRole(user.Id, "employee");
+                }
             }
+            else
+            {
+                //***********************Creating accountant user
+                var userManager = Context.GetOwinContext().Get<ApplicationUserManager>();
+                //Note that manager will assign accountants a company email in order to log in
+                string email = EM1.Text;
+                //***********************Check if user is already present
+                var search1 = userManager.FindByEmail(email);
+                if (search1 == null)
+                {
+                    var user = new ApplicationUser()
+                    {
+                        UserName = EM1.Text,
+                        Email = EM1.Text
+                    };
+                    IdentityResult result = userManager.Create(user, "Acc123!"); //Default Password
+                    userManager.AddToRole(user.Id, "accountant");
+                }
+            }
+            
 
             //Make textboxes empty again
             FN1.Text = "";
