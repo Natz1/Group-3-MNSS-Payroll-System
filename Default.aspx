@@ -2,16 +2,21 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Welcome to the MNSS Payroll System</h2>
-        <p class="lead">
-            The MNSS Payroll System is a local payroll 
-            management system that is used to manage all our employees’ financial records.
-        </p>
-        
-    <h3>Business Goal</h3>
-        <p class="lead">
-            The business goal of MNSS is to easily and effectively manage the 
-            payment process of our employees.
-        </p>
+    <h1 style="font-size:xx-large">Welcome to the MNSS Payroll System!</h1>
+    <table>
+        <tr>
+            <td><img src="/Images/work.jpg" width="500" height="300"/></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><img src="/Images/hands.jpg" width="500" height="300"/></td>
+        </tr>
+        <tr>
+
+        </tr>
+        <tr>
+            <td><br /><p>The MNSS Payroll System is an efficient payroll management system that we use to manage all our employees’ financial records.</p></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><br /><p>The business goal of MNSS is to easily and effectively manage the payment process of our employees.</p></td>
+        </tr>
+    </table>
     
 </asp:Content>

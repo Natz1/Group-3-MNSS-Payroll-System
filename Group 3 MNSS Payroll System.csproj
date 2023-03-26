@@ -179,9 +179,12 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Images\coins.jpg" />
+    <Content Include="Images\hands.jpg" />
     <Content Include="Images\hLogo.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\money.jpg" />
+    <Content Include="Images\work.jpg" />
     <Content Include="Roles\Accountant\EmployeeDisplay.aspx" />
     <Content Include="Roles\Accountant\PaymentRequests.aspx" />
     <Content Include="Roles\Accountant\SalaryCalculation.aspx" />
