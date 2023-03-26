@@ -168,6 +168,7 @@ namespace Group_3_MNSS_Payroll_System
             manager2.Visible = false;
             manager3.Visible = false;
             manager4.Visible = false;
+            manager5.Visible = false;
 
             //***********************Make navigation visible depending on user role
             if (Context.User.IsInRole("employee"))
@@ -191,6 +192,7 @@ namespace Group_3_MNSS_Payroll_System
                 manager2.Visible = true;
                 manager3.Visible = true;
                 manager4.Visible = true;
+                manager5.Visible = true;
             }
         }
 

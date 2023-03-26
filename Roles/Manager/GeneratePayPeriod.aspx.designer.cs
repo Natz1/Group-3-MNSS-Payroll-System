@@ -7,29 +7,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Group_3_MNSS_Payroll_System.Permissions.Manager
+namespace Group_3_MNSS_Payroll_System.Roles.Manager
 {
 
 
-    public partial class ReviewPayroll
+    public partial class GeneratePayPeriod
     {
 
         /// <summary>
-        /// PayrollData control.
+        /// GenerateData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource PayrollData;
+        protected global::System.Web.UI.WebControls.SqlDataSource GenerateData;
 
         /// <summary>
-        /// PayrollList control.
+        /// GenerateList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView PayrollList;
+        protected global::System.Web.UI.WebControls.GridView GenerateList;
+
+        /// <summary>
+        /// Generate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Generate;
     }
 }

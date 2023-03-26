@@ -93,6 +93,7 @@
                                 read what they entail
                                 and approve or reject them-->
                         <li id="manager4" runat="server"><a runat="server" href="~/Roles/Manager/ReviewLeave">Leave Requests</a></li>
+                        <li id="manager5" runat="server"><a runat="server" href="~/Roles/Manager/GeneratePayPeriod">Pay Period</a></li>
 
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>

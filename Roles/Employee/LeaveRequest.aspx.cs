@@ -54,7 +54,7 @@ namespace Group_3_MNSS_Payroll_System.Employee
         protected void Submit_Click(object sender, EventArgs e)
         {
             LeaveData.Insert();
-            Response.Redirect("LeaveRequest");
+            Response.Redirect("SendRequest");
         }
     }
 }

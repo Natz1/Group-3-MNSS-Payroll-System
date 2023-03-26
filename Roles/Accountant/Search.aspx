@@ -44,7 +44,7 @@
             <asp:ControlParameter ControlID="LN" Name="LastName" PropertyName="Text" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="EmpList" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="EmpData" 
+    <asp:GridView ID="EmpList" runat="server" Width="1000px" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="EmpData" 
         OnSelectedIndexChanged="Viewing">
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
@@ -58,6 +58,7 @@
             <asp:BoundField DataField="Salary" HeaderText="Salary" SortExpression="Salary" />
             <asp:CommandField ShowSelectButton="True" ItemStyle-ForeColor="#184F07" SelectText="View Employee" />
         </Columns>
+        <EmptyDataTemplate>No data available to display.</EmptyDataTemplate>
         <HeaderStyle CssClass="header"></HeaderStyle>
         <RowStyle CssClass="rows"></RowStyle>
     </asp:GridView>

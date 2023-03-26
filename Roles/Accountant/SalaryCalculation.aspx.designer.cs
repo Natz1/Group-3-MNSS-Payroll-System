@@ -7,128 +7,164 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Group_3_MNSS_Payroll_System
+namespace Group_3_MNSS_Payroll_System.Roles.Accountant
 {
 
 
-    public partial class SiteMaster
+    public partial class SalaryCalculation
     {
 
         /// <summary>
-        /// employee1 control.
+        /// rate1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl employee1;
+        protected global::System.Web.UI.WebControls.TextBox rate1;
 
         /// <summary>
-        /// employee2 control.
+        /// amount1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl employee2;
+        protected global::System.Web.UI.WebControls.TextBox amount1;
 
         /// <summary>
-        /// employee3 control.
+        /// deduction1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl employee3;
+        protected global::System.Web.UI.WebControls.TextBox deduction1;
 
         /// <summary>
-        /// employee4 control.
+        /// CalDeduct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl employee4;
+        protected global::System.Web.UI.WebControls.Button CalDeduct;
 
         /// <summary>
-        /// employee5 control.
+        /// RegularExpressionValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl employee5;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
 
         /// <summary>
-        /// accountant1 control.
+        /// BonusStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl accountant1;
+        protected global::System.Web.UI.WebControls.DropDownList BonusStatus;
 
         /// <summary>
-        /// accountant2 control.
+        /// Select control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl accountant2;
+        protected global::System.Web.UI.WebControls.Button Select;
 
         /// <summary>
-        /// manager1 control.
+        /// percent2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl manager1;
+        protected global::System.Web.UI.WebControls.TextBox percent2;
 
         /// <summary>
-        /// manager2 control.
+        /// amount2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl manager2;
+        protected global::System.Web.UI.WebControls.TextBox amount2;
 
         /// <summary>
-        /// manager3 control.
+        /// bonus2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl manager3;
+        protected global::System.Web.UI.WebControls.TextBox bonus2;
 
         /// <summary>
-        /// manager4 control.
+        /// CalBonus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl manager4;
+        protected global::System.Web.UI.WebControls.Button CalBonus;
 
         /// <summary>
-        /// manager5 control.
+        /// RegularExpressionValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl manager5;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
 
         /// <summary>
-        /// MainContent control.
+        /// amount3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.TextBox amount3;
+
+        /// <summary>
+        /// deduction3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox deduction3;
+
+        /// <summary>
+        /// bonus3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox bonus3;
+
+        /// <summary>
+        /// final3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox final3;
+
+        /// <summary>
+        /// CalSalary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CalSalary;
     }
 }

@@ -68,7 +68,7 @@ Select * from MonthlyHours
 
 
 --Create stored procedure to calculate monthly hours
-Create procedure MonthlyWork(@id int)
+Alter procedure MonthlyWork(@id int)
 As
 Begin
     --if record exists for current month and current year then update it,
@@ -76,22 +76,95 @@ Begin
     if not exists (Select CurrentMonth from MonthlyHours where id = @id and CurrentMonth = month(GetDate())) and 
     not exists (Select CurrentYear from MonthlyHours where id = @id and CurrentYear = year(GetDate()))
     Begin
-        --Based on the month and year find the total hours worked
-        --for this month
-        Insert into MonthlyHours Values(@id, month(GetDate()), year(getdate()),
-            (Select sum(HoursWorked) from DailyHours where month(ClockInDate) = month(GetDate()) and 
-            year(ClockInDate) = year(getdate()) and id = @id))
+        --If there are no hours worked for the month set monthly hours worked to 0
+        if not exists (Select ClockOutDate from DailyHours where id = @id 
+        and month(ClockOutDate) = month(GetDate()) and 
+                year(ClockOutDate) = year(getdate()))
+        Begin
+            --Based on the month and year find the total hours worked
+            --for this month
+            Insert into MonthlyHours Values(@id, month(GetDate()), year(getdate()), 0)
+        End
+        Else
+        Begin
+            --Based on the month and year find the total hours worked
+            --for this month
+            Insert into MonthlyHours Values(@id, month(GetDate()), year(getdate()),
+                (Select sum(isnull(HoursWorked,0)) from DailyHours where month(ClockInDate) = month(GetDate()) and 
+                year(ClockInDate) = year(getdate()) and id = @id))
+        End
     End
     Else
     Begin
-        --Based on the month and year find the total hours worked
-        --for this month
-        Update MonthlyHours Set MonthlyHoursWorked = (Select sum(HoursWorked) from DailyHours where month(ClockInDate) = month(GetDate()) and 
-            year(ClockInDate) = year(getdate()) and id = @id) Where id = @id
+        --If there are no hours worked for the month set monthly hours worked to 0
+        if not exists (Select ClockOutDate from DailyHours where id = @id 
+        and month(ClockOutDate) = month(GetDate()) and 
+                year(ClockOutDate) = year(getdate()))
+        Begin
+            Update MonthlyHours Set MonthlyHoursWorked = 0 Where id = @id
+        End
+        Else
+        Begin
+            --Based on the month and year find the total hours worked
+            --for this month
+            Update MonthlyHours Set MonthlyHoursWorked = 
+            (Select sum(isnull(HoursWorked,0)) from DailyHours where month(ClockInDate) = month(GetDate()) and 
+                year(ClockInDate) = year(getdate()) and id = @id) Where id = @id
+        End
     End
     
     Select * from MonthlyHours where id = @id
 End
 Go
 
-Exec MonthlyWork '5'
+Exec MonthlyWork '6'
+
+--Stores the payment request information
+CREATE TABLE PaymentRequest
+(
+    [Id]  INT NOT NULL,
+    [PayRequestID] INT NOT NULL IDENTITY(1,1),
+    [FirstName] VARCHAR(50) NOT NULL, 
+    [LastName] VARCHAR(50) NOT NULL, 
+    [Date] DATETIME NOT NULL,
+    [Amount] MONEY NOT NULL,
+    [Reason] VARCHAR(1000) NOT NULL,
+    [Status] VARCHAR(50) NOT NULL Default 'Pending',
+    Constraint fk_id3 foreign key ([Id]) references Employee ([Id]),
+    Constraint pk_pay primary key ([Id], [PayRequestID]),
+    Constraint ck_status check (Status in ('Completed','Rejected', 'Pending')),
+)
+
+Select * from PaymentRequest
+
+--Stores the details for a payment transaction
+CREATE TABLE PaymentTransaction
+(
+    [Id]  INT NOT NULL,
+    [PayRequestID] INT NOT NULL,
+    [TransactionDate] DATETIME NOT NULL DEFAULT GETDATE(),
+    [Amount] MONEY NOT NULL,
+    [TaxRate] DECIMAL(2,2) NULL DEFAULT 0,
+    [TaxDeduction] MONEY NULL DEFAULT 0,
+    [BonusPercentage] DECIMAL(2,2) NULL DEFAULT 0,
+    [Bonus] MONEY NULL DEFAULT 0,
+    [FinalSalary] MONEY NULL DEFAULT 0,
+    Constraint fk_Pid1 foreign key ([Id],[PayRequestID]) references 
+    PaymentRequest ([Id],[PayRequestID]),
+    Constraint pk_transac primary key ([Id], [PayRequestID], [TransactionDate]),
+)
+
+Select * from PaymentTransaction
+
+--Stores pay period information for the manager to update
+CREATE TABLE PayPeriod
+(
+    [PayPeriodId] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    [Type] VARCHAR(50) NOT NULL DEFAULT 'Monthly',
+    [PayDate] DATETIME NOT NULL DEFAULT 
+            DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 25)
+)
+
+INSERT INTO PayPeriod Values('Monthly', DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 25))
+
+Select * from PayPeriod

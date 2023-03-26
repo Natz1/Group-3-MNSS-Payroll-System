@@ -11,37 +11,6 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     <asp:ListView ID="LeaveList" runat="server" DataKeyNames="Id,LeaveRequestID" DataSourceID="LeaveData" PageSize="3">
-        <AlternatingItemTemplate>
-            <li style="background-color: #FFF8DC;">Id:
-                <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
-                <br />
-                LeaveRequestID:
-                <asp:Label ID="LeaveRequestIDLabel" runat="server" Text='<%# Eval("LeaveRequestID") %>' />
-                <br />
-                FirstName:
-                <asp:Label ID="FirstNameLabel" runat="server" Text='<%# Eval("FirstName") %>' />
-                <br />
-                LastName:
-                <asp:Label ID="LastNameLabel" runat="server" Text='<%# Eval("LastName") %>' />
-                <br />
-                Type:
-                <asp:Label ID="TypeLabel" runat="server" Text='<%# Eval("Type") %>' />
-                <br />
-                Reason:
-                <asp:Label ID="ReasonLabel" runat="server" Text='<%# Eval("Reason") %>' />
-                <br />
-                LeaveDate:
-                <asp:Label ID="LeaveDateLabel" runat="server" Text='<%# Eval("LeaveDate") %>' />
-                <br />
-                ReturnDate:
-                <asp:Label ID="ReturnDateLabel" runat="server" Text='<%# Eval("ReturnDate") %>' />
-                <br />
-                Response:
-                <asp:Label ID="ResponseLabel" runat="server" Text='<%# Eval("Response") %>' />
-                <br />
-                <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
-            </li>
-        </AlternatingItemTemplate>
         <EditItemTemplate>
             <li style="background-color: #AFE1AF;color: #000000;">Id:
                 <asp:Label ID="IdLabel1" runat="server" Text='<%# Eval("Id") %>'/>
@@ -85,28 +54,6 @@
         <EmptyDataTemplate>
             No data was returned.
         </EmptyDataTemplate>
-        <InsertItemTemplate>
-            <li style="">Id:
-                <asp:TextBox ID="IdTextBox" runat="server" Text='<%# Bind("Id") %>' />
-                <br />FirstName:
-                <asp:TextBox ID="FirstNameTextBox" runat="server" Text='<%# Bind("FirstName") %>' />
-                <br />LastName:
-                <asp:TextBox ID="LastNameTextBox" runat="server" Text='<%# Bind("LastName") %>' />
-                <br />Type:
-                <asp:TextBox ID="TypeTextBox" runat="server" Text='<%# Bind("Type") %>' />
-                <br />Reason:
-                <asp:TextBox ID="ReasonTextBox" runat="server" Text='<%# Bind("Reason") %>' />
-                <br />LeaveDate:
-                <asp:TextBox ID="LeaveDateTextBox" runat="server" Text='<%# Bind("LeaveDate") %>' />
-                <br />ReturnDate:
-                <asp:TextBox ID="ReturnDateTextBox" runat="server" Text='<%# Bind("ReturnDate") %>' />
-                <br />Response:
-                <asp:TextBox ID="ResponseTextBox" runat="server" Text='<%# Bind("Response") %>' />
-                <br />
-                <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
-                <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
-            </li>
-        </InsertItemTemplate>
         <ItemSeparatorTemplate>
 <br />
         </ItemSeparatorTemplate>
@@ -153,36 +100,5 @@
                 </asp:DataPager>
             </div>
         </LayoutTemplate>
-        <SelectedItemTemplate>
-            <li style="background-color: #008A8C;font-weight: bold;color: #FFFFFF;">Id:
-                <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
-                <br />
-                LeaveRequestID:
-                <asp:Label ID="LeaveRequestIDLabel" runat="server" Text='<%# Eval("LeaveRequestID") %>' />
-                <br />
-                FirstName:
-                <asp:Label ID="FirstNameLabel" runat="server" Text='<%# Eval("FirstName") %>' />
-                <br />
-                LastName:
-                <asp:Label ID="LastNameLabel" runat="server" Text='<%# Eval("LastName") %>' />
-                <br />
-                Type:
-                <asp:Label ID="TypeLabel" runat="server" Text='<%# Eval("Type") %>' />
-                <br />
-                Reason:
-                <asp:Label ID="ReasonLabel" runat="server" Text='<%# Eval("Reason") %>' />
-                <br />
-                LeaveDate:
-                <asp:Label ID="LeaveDateLabel" runat="server" Text='<%# Eval("LeaveDate") %>' />
-                <br />
-                ReturnDate:
-                <asp:Label ID="ReturnDateLabel" runat="server" Text='<%# Eval("ReturnDate") %>' />
-                <br />
-                Response:
-                <asp:Label ID="ResponseLabel" runat="server" Text='<%# Eval("Response") %>' />
-                <br />
-                <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
-            </li>
-        </SelectedItemTemplate>
     </asp:ListView>
 </asp:Content>

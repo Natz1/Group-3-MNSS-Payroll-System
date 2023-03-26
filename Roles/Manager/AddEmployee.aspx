@@ -14,7 +14,7 @@
         </tr>
         <tr>
             <td><asp:Label ID="DB" runat="server" Text="DOB: "></asp:Label></td>
-            <td><asp:TextBox ID="DB1" runat="server"></asp:TextBox></td>
+            <td><asp:TextBox ID="DB1" runat="server" TextMode="Date" Width="203"></asp:TextBox></td>
         </tr>
         <tr>
             <td><asp:Label ID="ADDR" runat="server" Text="Address: "></asp:Label></td>
@@ -22,11 +22,11 @@
         </tr>
         <tr>
             <td><asp:Label ID="EM" runat="server" Text="Email: "></asp:Label></td>
-            <td><asp:TextBox ID="EM1" runat="server"></asp:TextBox></td>
+            <td><asp:TextBox ID="EM1" runat="server" TextMode="Email"></asp:TextBox></td>
         </tr>
         <tr>
             <td><asp:Label ID="PHN" runat="server" Text="Phone: "></asp:Label></td>
-            <td><asp:TextBox ID="PHN1" runat="server"></asp:TextBox></td>
+            <td><asp:TextBox ID="PHN1" runat="server" TextMode="Number"></asp:TextBox></td>
         </tr>
         <tr>
             <td><asp:Label ID="TITLE" runat="server" Text="Job Title: "></asp:Label></td>
@@ -34,7 +34,7 @@
         </tr>
         <tr>
             <td><asp:Label ID="SAL" runat="server" Text="Salary: "></asp:Label>
-            <td><asp:TextBox ID="SAL1" runat="server"></asp:TextBox></td>
+            <td><asp:TextBox ID="SAL1" runat="server" TextMode="Number"></asp:TextBox></td>
         </tr>
         <tr>
             <td></td>
@@ -70,7 +70,7 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     <!--GridView of data-->
-    <asp:GridView ID="AddList" DataSourceID="AddData"  runat="server" 
+    <asp:GridView ID="AddList" DataSourceID="AddData"  runat="server" Width="1000px"
         CssClass="gridcss" AllowPaging="True" PageSize="20" AutoGenerateColumns="False" DataKeyNames="Id" 
          OnRowDeleting="RowDelete">
         <Columns>

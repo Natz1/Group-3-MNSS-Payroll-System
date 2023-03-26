@@ -80,7 +80,7 @@
             <asp:ControlParameter ControlID="ID" Name="id" PropertyName="Text" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="HoursList" runat="server" PageSize="5" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Id,DailyLogId" DataSourceID="HoursData">
+    <asp:GridView ID="HoursList" runat="server" Width="1000px" PageSize="5" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Id,DailyLogId" DataSourceID="HoursData">
         <Columns>
             <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
             <asp:BoundField DataField="DailyLogId" HeaderText="DailyLogId" SortExpression="DailyLogId" InsertVisible="False" ReadOnly="True" />

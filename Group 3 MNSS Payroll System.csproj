@@ -179,19 +179,25 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Images\coins.jpg" />
+    <Content Include="Images\hands.jpg" />
     <Content Include="Images\hLogo.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\money.jpg" />
+    <Content Include="Images\work.jpg" />
     <Content Include="Roles\Accountant\EmployeeDisplay.aspx" />
     <Content Include="Roles\Accountant\PaymentRequests.aspx" />
+    <Content Include="Roles\Accountant\SalaryCalculation.aspx" />
     <Content Include="Roles\Accountant\Search.aspx" />
     <Content Include="Roles\Employee\ClockInOut.aspx" />
     <Content Include="Roles\Employee\LeaveRequest.aspx" />
     <Content Include="Roles\Employee\PaymentRequest.aspx" />
     <Content Include="Roles\Employee\PayPeriod.aspx" />
     <Content Include="Roles\Employee\Profile.aspx" />
+    <Content Include="Roles\Employee\SendRequest.aspx" />
     <Content Include="Roles\Manager\AddEmployee.aspx" />
     <Content Include="Roles\Manager\EmployeeDisplay.aspx" />
+    <Content Include="Roles\Manager\GeneratePayPeriod.aspx" />
     <Content Include="Roles\Manager\ReviewLeave.aspx" />
     <Content Include="Roles\Manager\ReviewPayroll.aspx" />
     <Content Include="Roles\Manager\Search.aspx" />
@@ -316,6 +322,13 @@
     <Compile Include="Roles\Accountant\PaymentRequests.aspx.designer.cs">
       <DependentUpon>PaymentRequests.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Roles\Accountant\SalaryCalculation.aspx.cs">
+      <DependentUpon>SalaryCalculation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\Accountant\SalaryCalculation.aspx.designer.cs">
+      <DependentUpon>SalaryCalculation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Roles\Accountant\Search.aspx.cs">
       <DependentUpon>Search.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -358,6 +371,13 @@
     <Compile Include="Roles\Employee\Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Roles\Employee\SendRequest.aspx.cs">
+      <DependentUpon>SendRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\Employee\SendRequest.aspx.designer.cs">
+      <DependentUpon>SendRequest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Roles\Manager\AddEmployee.aspx.cs">
       <DependentUpon>AddEmployee.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -371,6 +391,13 @@
     </Compile>
     <Compile Include="Roles\Manager\EmployeeDisplay.aspx.designer.cs">
       <DependentUpon>EmployeeDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Roles\Manager\GeneratePayPeriod.aspx.cs">
+      <DependentUpon>GeneratePayPeriod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\Manager\GeneratePayPeriod.aspx.designer.cs">
+      <DependentUpon>GeneratePayPeriod.aspx</DependentUpon>
     </Compile>
     <Compile Include="Roles\Manager\ReviewLeave.aspx.cs">
       <DependentUpon>ReviewLeave.aspx</DependentUpon>
