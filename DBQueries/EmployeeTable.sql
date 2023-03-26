@@ -155,3 +155,16 @@ CREATE TABLE PaymentTransaction
 )
 
 Select * from PaymentTransaction
+
+--Stores pay period information for the manager to update
+CREATE TABLE PayPeriod
+(
+    [PayPeriodId] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    [Type] VARCHAR(50) NOT NULL DEFAULT 'Monthly',
+    [PayDate] DATETIME NOT NULL DEFAULT 
+            DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 25)
+)
+
+INSERT INTO PayPeriod Values('Monthly', DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 25))
+
+Select * from PayPeriod

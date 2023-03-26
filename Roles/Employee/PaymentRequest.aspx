@@ -122,4 +122,25 @@
 
     <hr />
     <h2>View Salary Information</h2>
+    <asp:SqlDataSource ID="SalaryData" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [PaymentTransaction] WHERE ([Id] = @Id)">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="ID" Name="Id" PropertyName="Text" Type="Int32" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:GridView ID="SalaryList" runat="server" PageSize="5" AllowPaging="True" DataSourceID="SalaryData" Width="1000px" AutoGenerateColumns="False" DataKeyNames="Id,PayRequestID,TransactionDate">
+        <Columns>
+            <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
+            <asp:BoundField DataField="PayRequestID" HeaderText="PayRequestID" ReadOnly="True" SortExpression="PayRequestID" />
+            <asp:BoundField DataField="TransactionDate" HeaderText="TransactionDate" ReadOnly="True" SortExpression="TransactionDate" />
+            <asp:BoundField DataField="Amount" HeaderText="Amount" SortExpression="Amount" />
+            <asp:BoundField DataField="TaxRate" HeaderText="TaxRate" SortExpression="TaxRate" />
+            <asp:BoundField DataField="TaxDeduction" HeaderText="TaxDeduction" SortExpression="TaxDeduction" />
+            <asp:BoundField DataField="BonusPercentage" HeaderText="BonusPercentage" SortExpression="BonusPercentage" />
+            <asp:BoundField DataField="Bonus" HeaderText="Bonus" SortExpression="Bonus" />
+            <asp:BoundField DataField="FinalSalary" HeaderText="FinalSalary" SortExpression="FinalSalary" />
+        </Columns>
+        <EmptyDataTemplate>No data available for display.</EmptyDataTemplate>
+        <HeaderStyle CssClass="header"></HeaderStyle>
+        <RowStyle CssClass="rows"></RowStyle>
+    </asp:GridView>
 </asp:Content>

@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Group_3_MNSS_Payroll_System.Employee
+namespace Group_3_MNSS_Payroll_System.Roles.Manager
 {
 
 
-    public partial class PayPeriod
+    public partial class GeneratePayPeriod
     {
 
         /// <summary>
@@ -31,5 +31,14 @@ namespace Group_3_MNSS_Payroll_System.Employee
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GenerateList;
+
+        /// <summary>
+        /// Generate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Generate;
     }
 }

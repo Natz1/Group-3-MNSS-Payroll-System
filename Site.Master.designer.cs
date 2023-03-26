@@ -114,6 +114,15 @@ namespace Group_3_MNSS_Payroll_System
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl manager4;
 
         /// <summary>
+        /// manager5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl manager5;
+
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

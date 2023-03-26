@@ -194,6 +194,7 @@
     <Content Include="Roles\Employee\SendRequest.aspx" />
     <Content Include="Roles\Manager\AddEmployee.aspx" />
     <Content Include="Roles\Manager\EmployeeDisplay.aspx" />
+    <Content Include="Roles\Manager\GeneratePayPeriod.aspx" />
     <Content Include="Roles\Manager\ReviewLeave.aspx" />
     <Content Include="Roles\Manager\ReviewPayroll.aspx" />
     <Content Include="Roles\Manager\Search.aspx" />
@@ -387,6 +388,13 @@
     </Compile>
     <Compile Include="Roles\Manager\EmployeeDisplay.aspx.designer.cs">
       <DependentUpon>EmployeeDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Roles\Manager\GeneratePayPeriod.aspx.cs">
+      <DependentUpon>GeneratePayPeriod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\Manager\GeneratePayPeriod.aspx.designer.cs">
+      <DependentUpon>GeneratePayPeriod.aspx</DependentUpon>
     </Compile>
     <Compile Include="Roles\Manager\ReviewLeave.aspx.cs">
       <DependentUpon>ReviewLeave.aspx</DependentUpon>
