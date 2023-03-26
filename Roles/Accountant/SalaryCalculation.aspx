@@ -18,18 +18,25 @@
         </thead>
         <tr>
             <td>
-                <asp:TextBox ID="rate1" runat="server" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="rate1" runat="server" Text="0.0" ValidationGroup="Val1"></asp:TextBox>
             </td>
             <td> * </td>
             <td>
-                <asp:TextBox ID="amount1" runat="server" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="amount1" runat="server" ReadOnly="True"  BackColor="#CCCCCC" ></asp:TextBox>
             </td>
             <td> = </td>
             <td>
-                <asp:TextBox ID="deduction1" runat="server" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="deduction1" runat="server" ReadOnly="True"  BackColor="#CCCCCC"></asp:TextBox>
+            </td>
+            <td>
+                <asp:Button ID="CalDeduct" runat="server" Text="Calculate" ValidationGroup="Val1" OnClick="CalDeduct_Click" />
             </td>
         </tr>
     </table>
+    <br />
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+    ControlToValidate="rate1" ValidationExpression="^\d+(\.\d{1,2})?$"
+    ErrorMessage="Please enter a numeric or decimal value."></asp:RegularExpressionValidator>
     <hr />
 
 
@@ -41,6 +48,8 @@
         <asp:ListItem>Approved</asp:ListItem>
         <asp:ListItem>Rejected</asp:ListItem>
     </asp:DropDownList>
+    <asp:Button ID="Select" runat="server" Text="Select" ValidationGroup="Val2" OnClick="Select_Click"/>
+
 
     <br />
     <br />
@@ -56,18 +65,25 @@
         </thead>
         <tr>
             <td>
-                <asp:TextBox ID="percent2" runat="server" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="percent2" runat="server" ReadOnly="true" Text="0.0"></asp:TextBox>
             </td>
             <td> * </td>
             <td>
-                <asp:TextBox ID="amount2" runat="server" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="amount2" runat="server" TextMode="Number" ReadOnly="True"  BackColor="#CCCCCC"></asp:TextBox>
             </td>
             <td> = </td>
             <td>
-                <asp:TextBox ID="bonus2" runat="server" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="bonus2" runat="server" TextMode="Number" ReadOnly="True"  BackColor="#CCCCCC"></asp:TextBox>
+            </td>
+            <td>
+                <asp:Button ID="CalBonus" runat="server" Text="Calculate" ValidationGroup="Val3" OnClick="CalBonus_Click"/>
             </td>
         </tr>
     </table>
+    <br />
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server"
+    ControlToValidate="percent2" ValidationExpression="^\d+(\.\d{1,2})?$"
+    ErrorMessage="Please enter a numeric or decimal value."></asp:RegularExpressionValidator>
     <hr />
 
 
@@ -90,19 +106,22 @@
         </thead>
         <tr>
             <td>
-                <asp:TextBox ID="amount3" runat="server" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="amount3" runat="server" ReadOnly="True"  BackColor="#CCCCCC"></asp:TextBox>
             </td>
             <td> - </td>
             <td>
-                <asp:TextBox ID="deduction3" runat="server" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="deduction3" runat="server" ReadOnly="True"  BackColor="#CCCCCC"></asp:TextBox>
             </td>
             <td> + </td>
             <td>
-                <asp:TextBox ID="bonus3" runat="server" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="bonus3" runat="server" ReadOnly="True"  BackColor="#CCCCCC"></asp:TextBox>
             </td>
             <td> = </td>
             <td>
-                <asp:TextBox ID="final3" runat="server" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="final3" runat="server" ReadOnly="True"  BackColor="#CCCCCC"></asp:TextBox>
+            </td>
+            <td>
+                <asp:Button ID="CalSalary" runat="server" Text="Calculate" ValidationGroup="Val4" OnClick="CalSalary_Click" />
             </td>
         </tr>
     </table>
