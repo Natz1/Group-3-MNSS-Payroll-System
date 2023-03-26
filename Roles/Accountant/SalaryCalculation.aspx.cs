@@ -87,6 +87,39 @@ namespace Group_3_MNSS_Payroll_System.Roles.Accountant
 
             //Displays the amount
             final3.Text = final.ToString();
+
+            //Make new SQL Connection
+            string connection = WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            SqlConnection con = new SqlConnection(connection);
+
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
+
+
+            //Create a command to insert the values into the database
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Insert into PaymentTransaction (Id, PayRequestID, Amount, TaxRate, TaxDeduction, BonusPercentage, Bonus, FinalSalary) " +
+                "Values (@id,@pid,@amt,@rate,@deduct,@percent,@bonus,@final)";
+            //Adding parameters from textbox values
+            cmd.Parameters.AddWithValue("@id", Request.QueryString["id"]);
+            cmd.Parameters.AddWithValue("@pid", Request.QueryString["pid"]);
+            cmd.Parameters.AddWithValue("@amt", amount);
+            cmd.Parameters.AddWithValue("@rate", Convert.ToDouble(rate1.Text));
+            cmd.Parameters.AddWithValue("@deduct", deduction);
+            cmd.Parameters.AddWithValue("@percent", Convert.ToDouble(percent2.Text));
+            cmd.Parameters.AddWithValue("@bonus", bonus);
+            cmd.Parameters.AddWithValue("@final", final);
+            //Execute the query
+            cmd.ExecuteNonQuery();
+
+
+            cmd.CommandText = "Update PaymentRequest Set Status = @status Where Id = @id and PayRequestID = @pid";
+            cmd.Parameters.AddWithValue("@status", "Completed");
+            cmd.ExecuteNonQuery();
         }
     }
 }

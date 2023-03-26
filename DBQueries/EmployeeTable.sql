@@ -136,3 +136,22 @@ CREATE TABLE PaymentRequest
 )
 
 Select * from PaymentRequest
+
+--Stores the details for a payment transaction
+CREATE TABLE PaymentTransaction
+(
+    [Id]  INT NOT NULL,
+    [PayRequestID] INT NOT NULL,
+    [TransactionDate] DATETIME NOT NULL DEFAULT GETDATE(),
+    [Amount] MONEY NOT NULL,
+    [TaxRate] DECIMAL(2,2) NULL DEFAULT 0,
+    [TaxDeduction] MONEY NULL DEFAULT 0,
+    [BonusPercentage] DECIMAL(2,2) NULL DEFAULT 0,
+    [Bonus] MONEY NULL DEFAULT 0,
+    [FinalSalary] MONEY NULL DEFAULT 0,
+    Constraint fk_Pid1 foreign key ([Id],[PayRequestID]) references 
+    PaymentRequest ([Id],[PayRequestID]),
+    Constraint pk_transac primary key ([Id], [PayRequestID], [TransactionDate]),
+)
+
+Select * from PaymentTransaction

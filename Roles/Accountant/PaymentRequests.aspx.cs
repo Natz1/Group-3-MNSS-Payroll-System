@@ -18,9 +18,11 @@ namespace Group_3_MNSS_Payroll_System.Accountant
         {
             //Get the id of the selected employee
             int id = Convert.ToInt32(RequestList.DataKeys[RequestList.SelectedIndex].Value);
+            //get the id of the payment request
+            int pid = (int)RequestList.SelectedDataKey.Values["PayRequestID"];
 
-            //Pass id to new page
-            Response.Redirect("SalaryCalculation?id=" + id);
+            //Pass id and pid to new page
+            Response.Redirect("SalaryCalculation?id=" + id + "&pid=" + pid);
         }
     }
 }
