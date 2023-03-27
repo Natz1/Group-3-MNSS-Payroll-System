@@ -24,14 +24,14 @@
     </table>
     <table>
         <tr>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
-                    runat="server" ErrorMessage="*Must enter name to search." ValidationGroup="Val1" 
-                    ControlToValidate="FN"></asp:RequiredFieldValidator>
+            <td> <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
+                    runat="server" ErrorMessage="*First name is required." ValidationGroup="Val1" 
+                    ControlToValidate="FN"></asp:RequiredFieldValidator></td>
         </tr>
         <tr>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
-                    runat="server" ErrorMessage="*Must enter name to search." ValidationGroup="Val1" 
-                    ControlToValidate="LN"></asp:RequiredFieldValidator>
+            <td><asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
+                    runat="server" ErrorMessage="*Last name is required." ValidationGroup="Val1" 
+                    ControlToValidate="LN"></asp:RequiredFieldValidator></td>            
         </tr>
     </table>
     <br />

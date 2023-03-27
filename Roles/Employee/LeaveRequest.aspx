@@ -42,7 +42,31 @@
             <td></td>
             <td></td>
             <td align="right">
-                <asp:Button ID="Submit" runat="server" Text="Submit Application" OnClick="Submit_Click" />
+                <asp:Button ID="Submit" runat="server" Text="Submit Application" OnClick="Submit_Click" ValidationGroup="Val1"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ErrorMessage="*Type is required" ValidationGroup="Val1" ControlToValidate="Type1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ErrorMessage="*Reason is required" ControlToValidate="Reason1" ValidationGroup="Val1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ErrorMessage="*Date of leave is required" ControlToValidate="LeaveDate1" ValidationGroup="Val1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ErrorMessage="*Date of return is required" ControlToValidate="ReturnDate1" ValidationGroup="Val1"></asp:RequiredFieldValidator>
             </td>
         </tr>
     </table>

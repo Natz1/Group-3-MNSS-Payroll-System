@@ -39,7 +39,55 @@
         <tr>
             <td></td>
             <td align="right">
-                <asp:Button ID="Save" runat="server" Text="Save" OnClick="Save_Click" />
+                <asp:Button ID="Save" runat="server" Text="Save" OnClick="Save_Click" ValidationGroup="Val1" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*First Name is required." 
+                    ValidationGroup="Val1" ControlToValidate="FN1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*Last Name is required." 
+                    ValidationGroup="Val1" ControlToValidate="LN1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*DOB is required." 
+                    ValidationGroup="Val1" ControlToValidate="DB1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*Address is required." 
+                    ValidationGroup="Val1" ControlToValidate="ADDR1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*Email is required." 
+                    ValidationGroup="Val1" ControlToValidate="EM1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="*Phone is required." 
+                    ValidationGroup="Val1" ControlToValidate="PHN1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="*Job Title is required." 
+                    ValidationGroup="Val1" ControlToValidate="TITLE1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*Salary is required." 
+                    ValidationGroup="Val1" ControlToValidate="SAL1"></asp:RequiredFieldValidator>
             </td>
         </tr>
     </table>

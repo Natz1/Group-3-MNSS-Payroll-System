@@ -47,7 +47,25 @@
         </tr>
         <tr>
             <td>
-                <asp:Button ID="Submit" runat="server" Text="Submit Application" OnClick="Submit_Click" />
+                <asp:Button ID="Submit" runat="server" Text="Submit Application" OnClick="Submit_Click" ValidationGroup="Val1" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ErrorMessage="*Date is required" ValidationGroup="Val1" ControlToValidate="Date"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ErrorMessage="*Amount is required" ControlToValidate="Amount" ValidationGroup="Val1"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ErrorMessage="*Reason is required" ControlToValidate="Reason" ValidationGroup="Val1"></asp:RequiredFieldValidator>
             </td>
         </tr>
     </table>
