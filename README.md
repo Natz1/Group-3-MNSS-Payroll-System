@@ -11,3 +11,13 @@
 <img width="468" alt="Picture6" src="https://github.com/Natz1/Group-3-MNSS-Payroll-System/assets/72895078/04a3572c-8bc4-4592-8546-c7df5bd38623">
 
 <img width="468" alt="Picture7" src="https://github.com/Natz1/Group-3-MNSS-Payroll-System/assets/72895078/0167f361-210f-4e55-8cd5-196462fd74fe">
+
+<img width="468" alt="Picture8" src="https://github.com/Natz1/Group-3-MNSS-Payroll-System/assets/72895078/a4151d53-ba7d-4709-be48-2c74436b7266">
+
+<img width="468" alt="Picture9" src="https://github.com/Natz1/Group-3-MNSS-Payroll-System/assets/72895078/798cb6f4-9381-48a7-9111-13f31f2f0320">
+
+<img width="468" alt="Picture10" src="https://github.com/Natz1/Group-3-MNSS-Payroll-System/assets/72895078/d0a97d3e-163f-4358-928b-c60e1014eb2d">
+
+<img width="468" alt="Picture11" src="https://github.com/Natz1/Group-3-MNSS-Payroll-System/assets/72895078/209c13e5-6b1b-49cd-9438-9ca1dcaebb2c">
+
+
