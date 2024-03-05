@@ -20,4 +20,5 @@
 
 <img width="468" alt="Picture11" src="https://github.com/Natz1/Group-3-MNSS-Payroll-System/assets/72895078/209c13e5-6b1b-49cd-9438-9ca1dcaebb2c">
 
+<img width="468" alt="Picture12" src="https://github.com/Natz1/Group-3-MNSS-Payroll-System/assets/72895078/33126368-61d9-41a9-aa12-8b3d979b4fb4">
 
